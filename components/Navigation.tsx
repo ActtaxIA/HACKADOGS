@@ -78,6 +78,18 @@ export default function Navigation() {
       {isOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-4 space-y-3">
+            {/* Logo en menú móvil */}
+            <div className="flex justify-center pb-4 border-b border-gray-200 mb-4">
+              <Link href="/" onClick={() => setIsOpen(false)} className="relative w-32 h-12">
+                <Image
+                  src="/images/hakadogs-04.png"
+                  alt="Hakadogs - Educación Canina"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </Link>
+            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
