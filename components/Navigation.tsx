@@ -25,7 +25,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             {/* Logo completo en desktop */}
-            <div className="hidden sm:block relative h-14 w-48 group-hover:scale-105 transition-transform">
+            <div className="hidden sm:block relative h-20 w-64 group-hover:scale-105 transition-transform">
               <Image
                 src="/images/hakadogs-02.png"
                 alt="Hakadogs - Educación Canina"
@@ -35,7 +35,7 @@ export default function Navigation() {
               />
             </div>
             {/* Logo en móvil - hakadogs-04.png */}
-            <div className="sm:hidden relative h-10 w-32 group-hover:scale-105 transition-transform">
+            <div className="sm:hidden relative h-16 w-48 group-hover:scale-105 transition-transform">
               <Image
                 src="/images/hakadogs-04.png"
                 alt="Hakadogs - Educación Canina"

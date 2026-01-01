@@ -17,6 +17,7 @@ export default function Footer() {
                   alt="Hakadogs"
                   fill
                   className="object-contain brightness-0 invert"
+                  priority
                 />
               </div>
               <div className="text-lg font-bold text-sage mt-3 text-center md:text-left">BE HAKA!</div>
