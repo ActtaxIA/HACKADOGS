@@ -1,4 +1,4 @@
-import { Metadata } from 'next/metadata'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Shield } from 'lucide-react'
 
