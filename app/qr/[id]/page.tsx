@@ -1,23 +1,67 @@
-import { createServerClient } from '@/lib/supabase/client'
-import { notFound } from 'next/navigation'
+'use client'
+
+import { useState, useEffect } from 'react'
+import { useParams } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Mail, MapPin, AlertCircle, Heart } from 'lucide-react'
 import { calculateAge } from '@/lib/utils'
 
-export default async function DogQRPage({ params }: { params: { id: string } }) {
-  const supabase = createServerClient()
+// Mock data para perro
+const mockDog = {
+  id: '1',
+  name: 'Max',
+  breed: 'Labrador Retriever',
+  birthdate: '2020-05-15',
+  gender: 'male',
+  microchip: 'ES123456789012',
+  photo_url: null,
+  profile_public: true,
+  special_characteristics: 'Muy amigable con niños',
+  allergies: ['Polen', 'Algunos medicamentos'],
+  profiles: {
+    full_name: 'Narciso Pardo',
+    phone: '685648241',
+    email: 'narciso.pardo@outlook.com'
+  }
+}
 
-  const { data: dog, error } = await supabase
-    .from('dogs')
-    .select('*, profiles(full_name, phone, email)')
-    .eq('id', params.id)
-    .single()
+export default function DogQRPage() {
+  const params = useParams()
+  const [dog, setDog] = useState(mockDog)
+  const [loading, setLoading] = useState(true)
 
-  if (error || !dog) {
-    notFound()
+  useEffect(() => {
+    // Simular carga de datos
+    // En producción real, esto vendría de una API o base de datos
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-forest-dark via-forest to-sage">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-white">Cargando información del perro...</p>
+        </div>
+      </div>
+    )
   }
 
-  // Si el perfil no es público, mostrar solo info de contacto
+  if (!dog) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-forest-dark via-forest to-sage">
+        <div className="text-center text-white">
+          <AlertCircle size={48} className="mx-auto mb-4" />
+          <h1 className="text-2xl font-bold mb-2">Perro no encontrado</h1>
+          <p className="text-white/80">El código QR no corresponde a ningún perro registrado.</p>
+        </div>
+      </div>
+    )
+  }
+
   const isPublic = dog.profile_public
 
   return (
@@ -38,9 +82,9 @@ export default async function DogQRPage({ params }: { params: { id: string } }) 
 
         {/* Foto del Perro */}
         <div className="bg-white rounded-2xl overflow-hidden shadow-2xl mb-6">
-          <div className="aspect-square bg-gradient-to-br from-forest-dark/10 to-sage/10 flex items-center justify-center">
+          <div className="aspect-square bg-gradient-to-br from-forest-dark/10 to-sage/10 flex items-center justify-center relative">
             {dog.photo_url ? (
-              <img src={dog.photo_url} alt={dog.name} className="w-full h-full object-cover" />
+              <Image src={dog.photo_url} alt={dog.name} fill className="object-cover" />
             ) : (
               <span className="text-9xl">🐕</span>
             )}
@@ -165,7 +209,7 @@ export default async function DogQRPage({ params }: { params: { id: string } }) 
         {isPublic && (
           <div className="text-center">
             <Link
-              href={`/app/community/perfiles/${dog.id}`}
+              href={`/apps/hakacommunity`}
               className="inline-flex items-center px-8 py-4 bg-white text-forest-dark hover:bg-gray-100 rounded-xl font-bold text-lg shadow-lg transition"
             >
               <Heart size={24} className="mr-2" />

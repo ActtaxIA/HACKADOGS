@@ -1,38 +1,91 @@
-import { createServerClient } from '@/lib/supabase/client'
-import { redirect } from 'next/navigation'
+'use client'
+
+import { useEffect, useState } from 'react'
+import { getLocalSession } from '@/lib/auth/mockAuth'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Plus, Edit, Trash2, Eye, EyeOff } from 'lucide-react'
 
-export default async function AdminEjerciciosPage() {
-  const supabase = createServerClient()
-
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
-
-  if (!session) {
-    redirect('/auth/login')
+// Mock data para ejercicios
+const mockExercises = [
+  {
+    id: '1',
+    title: 'Sentado (Sit)',
+    description: 'Enseña a tu perro el comando básico sentado',
+    category: 'Obediencia Básica',
+    difficulty: 'beginner',
+    duration: 5,
+    published: true,
+    featured: true,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: '2',
+    title: 'Quieto (Stay)',
+    description: 'Comando para que el perro permanezca quieto',
+    category: 'Obediencia Básica',
+    difficulty: 'beginner',
+    duration: 10,
+    published: true,
+    featured: false,
+    created_at: new Date().toISOString()
+  },
+  {
+    id: '3',
+    title: 'Aquí (Come)',
+    description: 'Llamada efectiva para que venga',
+    category: 'Obediencia Básica',
+    difficulty: 'beginner',
+    duration: 15,
+    published: true,
+    featured: true,
+    created_at: new Date().toISOString()
   }
+]
 
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('role')
-    .eq('id', session.user.id)
-    .single()
+export default function AdminEjerciciosPage() {
+  const router = useRouter()
+  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState<any>(null)
+  const [exercises] = useState(mockExercises)
 
-  if (profile?.role !== 'admin') {
-    redirect('/cliente/dashboard')
+  useEffect(() => {
+    const checkAuth = () => {
+      const { data } = getLocalSession()
+
+      if (!data?.session) {
+        router.push('/auth/login')
+        return
+      }
+
+      const userRole = data.session.user.user_metadata?.role
+      if (userRole !== 'admin') {
+        router.push('/apps')
+        return
+      }
+
+      setUser(data.session.user)
+      setLoading(false)
+    }
+
+    checkAuth()
+  }, [router])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-gray-200 border-t-forest rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Cargando ejercicios...</p>
+        </div>
+      </div>
+    )
   }
-
-  const { data: exercises } = await supabase
-    .from('exercises')
-    .select('*')
-    .order('created_at', { ascending: false })
 
   return (
-    <div className="min-h-screen bg-cream">
-      <div className="bg-gradient-to-r from-forest-dark to-forest text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-cream pt-20">
+      <div className="bg-gradient-to-r from-forest-dark to-forest text-white -mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-28">
           <Link href="/admin/dashboard" className="inline-flex items-center text-white/80 hover:text-white mb-4">
             <ArrowLeft size={20} className="mr-2" />
             Volver al Panel
@@ -54,24 +107,24 @@ export default async function AdminEjerciciosPage() {
         {/* Estadísticas */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">
           <div className="bg-white rounded-xl p-6">
-            <p className="text-3xl font-bold text-forest-dark">{exercises?.length || 0}</p>
+            <p className="text-3xl font-bold text-forest-dark">{exercises.length}</p>
             <p className="text-sm text-gray-600">Total</p>
           </div>
           <div className="bg-white rounded-xl p-6">
             <p className="text-3xl font-bold text-green-600">
-              {exercises?.filter(e => e.published).length || 0}
+              {exercises.filter(e => e.published).length}
             </p>
             <p className="text-sm text-gray-600">Publicados</p>
           </div>
           <div className="bg-white rounded-xl p-6">
             <p className="text-3xl font-bold text-yellow-600">
-              {exercises?.filter(e => !e.published).length || 0}
+              {exercises.filter(e => !e.published).length}
             </p>
             <p className="text-sm text-gray-600">Borradores</p>
           </div>
           <div className="bg-white rounded-xl p-6">
             <p className="text-3xl font-bold text-blue-600">
-              {exercises?.filter(e => e.featured).length || 0}
+              {exercises.filter(e => e.featured).length}
             </p>
             <p className="text-sm text-gray-600">Destacados</p>
           </div>
@@ -92,7 +145,7 @@ export default async function AdminEjerciciosPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {exercises && exercises.length > 0 ? (
+                {exercises.length > 0 ? (
                   exercises.map((exercise) => (
                     <tr key={exercise.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4">

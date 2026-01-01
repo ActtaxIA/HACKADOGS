@@ -1,40 +1,88 @@
-import { createServerClient } from '@/lib/supabase/client'
-import { redirect } from 'next/navigation'
+'use client'
+
+import { useEffect, useState } from 'react'
+import { getLocalSession } from '@/lib/auth/mockAuth'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, Users, Shield, Mail, Calendar, Search } from 'lucide-react'
 
-export default async function UsuariosAdminPage() {
-  const supabase = createServerClient()
+// Mock data para usuarios
+const mockUsers = [
+  {
+    id: '1',
+    email: 'narciso.pardo@outlook.com',
+    full_name: 'Narciso Pardo',
+    phone: '685648241',
+    role: 'admin',
+    created_at: new Date('2024-01-15').toISOString(),
+    avatar_url: null,
+    dogs: [{ count: 2 }]
+  },
+  {
+    id: '2',
+    email: 'user@hakadogs.com',
+    full_name: 'Usuario Demo',
+    phone: '600123456',
+    role: 'client',
+    created_at: new Date('2024-12-20').toISOString(),
+    avatar_url: null,
+    dogs: [{ count: 1 }]
+  }
+]
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+export default function UsuariosAdminPage() {
+  const router = useRouter()
+  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState<any>(null)
+  const [users] = useState(mockUsers)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [roleFilter, setRoleFilter] = useState('')
 
-  if (!session) {
-    redirect('/auth/login')
+  useEffect(() => {
+    const checkAuth = () => {
+      const { data } = getLocalSession()
+
+      if (!data?.session) {
+        router.push('/auth/login')
+        return
+      }
+
+      const userRole = data.session.user.user_metadata?.role
+      if (userRole !== 'admin') {
+        router.push('/apps')
+        return
+      }
+
+      setUser(data.session.user)
+      setLoading(false)
+    }
+
+    checkAuth()
+  }, [router])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-gray-200 border-t-forest rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Cargando usuarios...</p>
+        </div>
+      </div>
+    )
   }
 
-  // Check admin
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('role')
-    .eq('id', session.user.id)
-    .single()
-
-  if (profile?.role !== 'admin') {
-    redirect('/cliente/dashboard')
-  }
-
-  // Get all users
-  const { data: users } = await supabase
-    .from('profiles')
-    .select('*, dogs(count)')
-    .order('created_at', { ascending: false })
+  const filteredUsers = users.filter(u => {
+    const matchesSearch = u.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         (u.full_name?.toLowerCase().includes(searchTerm.toLowerCase()) || false)
+    const matchesRole = !roleFilter || u.role === roleFilter
+    return matchesSearch && matchesRole
+  })
 
   return (
-    <div className="min-h-screen bg-cream">
-      <div className="bg-gradient-to-r from-forest-dark to-forest text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-cream pt-20">
+      <div className="bg-gradient-to-r from-forest-dark to-forest text-white -mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-28">
           <Link href="/admin/dashboard" className="inline-flex items-center text-white/80 hover:text-white mb-4">
             <ArrowLeft size={20} className="mr-2" />
             Volver al Dashboard
@@ -42,7 +90,7 @@ export default async function UsuariosAdminPage() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold">Gestión de Usuarios</h1>
-              <p className="text-white/90 mt-2">{users?.length || 0} usuarios totales</p>
+              <p className="text-white/90 mt-2">{filteredUsers.length} usuarios totales</p>
             </div>
           </div>
         </div>
@@ -57,10 +105,16 @@ export default async function UsuariosAdminPage() {
               <input
                 type="text"
                 placeholder="Buscar usuarios..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-forest focus:border-transparent"
               />
             </div>
-            <select className="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-forest">
+            <select 
+              value={roleFilter}
+              onChange={(e) => setRoleFilter(e.target.value)}
+              className="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-forest"
+            >
               <option value="">Todos los roles</option>
               <option value="client">Clientes</option>
               <option value="admin">Administradores</option>
@@ -75,7 +129,7 @@ export default async function UsuariosAdminPage() {
               <Users className="text-blue-600" size={24} />
               <span className="text-sm text-gray-600">Total Usuarios</span>
             </div>
-            <p className="text-3xl font-bold text-forest-dark">{users?.length || 0}</p>
+            <p className="text-3xl font-bold text-forest-dark">{filteredUsers.length}</p>
           </div>
 
           <div className="bg-white rounded-xl p-6">
@@ -84,7 +138,7 @@ export default async function UsuariosAdminPage() {
               <span className="text-sm text-gray-600">Administradores</span>
             </div>
             <p className="text-3xl font-bold text-forest-dark">
-              {users?.filter(u => u.role === 'admin').length || 0}
+              {filteredUsers.filter(u => u.role === 'admin').length}
             </p>
           </div>
 
@@ -94,7 +148,7 @@ export default async function UsuariosAdminPage() {
               <span className="text-sm text-gray-600">Clientes</span>
             </div>
             <p className="text-3xl font-bold text-forest-dark">
-              {users?.filter(u => u.role === 'client').length || 0}
+              {filteredUsers.filter(u => u.role === 'client').length}
             </p>
           </div>
 
@@ -104,11 +158,11 @@ export default async function UsuariosAdminPage() {
               <span className="text-sm text-gray-600">Nuevos (30d)</span>
             </div>
             <p className="text-3xl font-bold text-forest-dark">
-              {users?.filter(u => {
+              {filteredUsers.filter(u => {
                 const created = new Date(u.created_at)
                 const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)
                 return created > thirtyDaysAgo
-              }).length || 0}
+              }).length}
             </p>
           </div>
         </div>
@@ -128,14 +182,14 @@ export default async function UsuariosAdminPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {users && users.length > 0 ? (
-                  users.map((user) => (
+                {filteredUsers.length > 0 ? (
+                  filteredUsers.map((user) => (
                     <tr key={user.id} className="hover:bg-gray-50 transition">
                       <td className="px-6 py-4">
                         <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 bg-forest-dark/10 rounded-full flex items-center justify-center">
+                          <div className="w-10 h-10 bg-forest-dark/10 rounded-full flex items-center justify-center overflow-hidden">
                             {user.avatar_url ? (
-                              <img src={user.avatar_url} alt="" className="w-full h-full rounded-full object-cover" />
+                              <Image src={user.avatar_url} alt="" width={40} height={40} className="rounded-full object-cover" />
                             ) : (
                               <Users size={20} className="text-forest-dark" />
                             )}
