@@ -68,12 +68,12 @@ export default function LoginPage() {
               <div>
                 <p className="font-medium">👨‍💼 ADMIN:</p>
                 <p>Email: <code className="bg-white px-2 py-0.5 rounded">narciso.pardo@outlook.com</code></p>
-                <p>Password: <code className="bg-white px-2 py-0.5 rounded">14356830Np</code></p>
+                <p>Password: <code className="bg-white px-2 py-0.5 rounded">Hacka2016@</code></p>
               </div>
               <div className="pt-2 border-t border-blue-200">
                 <p className="font-medium">👤 USER:</p>
                 <p>Email: <code className="bg-white px-2 py-0.5 rounded">user@hakadogs.com</code></p>
-                <p>Password: <code className="bg-white px-2 py-0.5 rounded">14356830Np</code></p>
+                <p>Password: <code className="bg-white px-2 py-0.5 rounded">Hacka2016@</code></p>
               </div>
             </div>
           </div>
