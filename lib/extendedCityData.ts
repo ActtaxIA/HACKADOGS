@@ -2384,6 +2384,829 @@ export const extendedCityData: Record<string, ExtendedCityData> = {
         problem: 'Ladridos a turistas'
       }
     ]
+  },
+  'elche': {
+    slug: 'elche',
+    parks: [
+      {
+        name: 'Parque Canino Palmeral',
+        location: 'Barrio de Carrús',
+        size: '800 m²',
+        features: [
+          'Zona vallada completa',
+          'Césped natural',
+          'Bebederos automáticos',
+          'Zona de sombra con palmeras',
+          'Separación perros grandes/pequeños'
+        ],
+        schedule: 'Abierto 8:00 - 22:00h',
+        highlight: 'Único parque canino junto al Palmeral de Elche'
+      },
+      {
+        name: 'Pipicán Parque Municipal',
+        location: 'Centro - Avenida de la Libertad',
+        size: '600 m²',
+        features: [
+          'Ubicación céntrica',
+          'Iluminación nocturna',
+          'Dispensadores de bolsas',
+          'Bancos con sombra',
+          'Muy frecuentado'
+        ],
+        highlight: 'El más céntrico de Elche'
+      },
+      {
+        name: 'Zona Canina Altabix',
+        location: 'Barrio Altabix',
+        size: '500 m²',
+        features: [
+          'Zona residencial tranquila',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Calor Mediterráneo Intenso',
+        description: 'Elche registra temperaturas de hasta 38°C en verano, con alta humedad que dificulta los paseos caninos durante el día.',
+        solution: 'Programamos sesiones temprano por la mañana o al atardecer, enseñamos a los perros a beber agua frecuentemente y evitamos asfalto caliente.'
+      },
+      {
+        icon: 'urban',
+        title: 'Ciudad Industrial y Residencial',
+        description: 'Segunda ciudad más grande de la Comunidad Valenciana con 234k habitantes, mezcla de zonas industriales, residenciales y el histórico Palmeral.',
+        solution: 'Adaptamos la educación según la zona: socialización en áreas residenciales, obediencia en zonas industriales y respeto al patrimonio en el Palmeral.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa del Palmeral',
+        description: 'El Palmeral de Elche es Patrimonio de la Humanidad UNESCO, con normativas específicas sobre perros en esta zona protegida.',
+        solution: 'Educamos para respetar las zonas restringidas, enseñamos a no dañar palmeras y cumplimos estrictamente con las ordenanzas municipales.'
+      }
+    ],
+    localTip: 'Aprovecha las horas tempranas (7-9h) y tardías (20-22h) en verano. El Parque Canino Palmeral es ideal para socialización con sombra natural de palmeras.',
+    testimonials: [
+      {
+        name: 'Miguel Torres',
+        neighborhood: 'Carrús',
+        rating: 5,
+        text: 'Mi perro tenía miedo a los ruidos industriales. Ahora pasea tranquilo por toda la ciudad.',
+        problem: 'Miedo a ruidos'
+      },
+      {
+        name: 'Carmen Ruiz',
+        neighborhood: 'Altabix',
+        rating: 5,
+        text: 'Perfecto servicio. Mi cachorro aprendió a respetar el Palmeral desde el primer día.',
+        problem: 'Cachorro destructivo'
+      },
+      {
+        name: 'José Martínez',
+        neighborhood: 'Centro',
+        rating: 5,
+        text: 'Con el calor de Elche necesitábamos ayuda para los paseos. Ahora tenemos rutina perfecta.',
+        problem: 'Paseos en verano'
+      }
+    ]
+  },
+  'granada': {
+    slug: 'granada',
+    parks: [
+      {
+        name: 'Parque Canino Genil',
+        location: 'Ribera del Genil',
+        size: '1.200 m²',
+        features: [
+          'Amplio espacio vallado',
+          'Vistas al río Genil',
+          'Zona de agility',
+          'Bebederos múltiples',
+          'Separación por tamaños',
+          'Iluminación completa'
+        ],
+        schedule: 'Abierto 7:00 - 23:00h',
+        highlight: 'El más grande de Granada con vistas al río'
+      },
+      {
+        name: 'Pipicán Alhambra',
+        location: 'Barrio del Realejo',
+        size: '700 m²',
+        features: [
+          'Cerca de la Alhambra',
+          'Zona histórica',
+          'Césped natural',
+          'Bancos con sombra',
+          'Muy frecuentado'
+        ],
+        highlight: 'Ubicación privilegiada cerca de monumentos'
+      },
+      {
+        name: 'Parque Canino Cartuja',
+        location: 'Campus Universitario',
+        size: '600 m²',
+        features: [
+          'Zona universitaria',
+          'Buena socialización',
+          'Iluminación nocturna',
+          'Dispensadores de bolsas'
+        ]
+      },
+      {
+        name: 'Zona Canina Zaidín',
+        location: 'Barrio Zaidín',
+        size: '500 m²',
+        features: [
+          'Zona residencial',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Calor Seco de Verano',
+        description: 'Granada puede alcanzar 40°C en verano con clima continental seco. Los inviernos son fríos con posibilidad de nieve en Sierra Nevada.',
+        solution: 'Adaptamos horarios según estación: mañanas tempranas en verano, mediodías en invierno. Enseñamos a los perros a manejar cambios bruscos de temperatura.'
+      },
+      {
+        icon: 'urban',
+        title: 'Ciudad Histórica y Universitaria',
+        description: 'Granada combina turismo masivo (Alhambra), vida universitaria y zonas residenciales. Muchos perros viven en pisos del centro histórico.',
+        solution: 'Educamos para convivencia en espacios reducidos, respeto a turistas y adaptación a la vida universitaria activa de la ciudad.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Zona Alhambra',
+        description: 'La zona de la Alhambra tiene restricciones especiales para perros. Además, Granada tiene ordenanzas específicas sobre perros en espacios públicos.',
+        solution: 'Conocemos todas las zonas restringidas y educamos para cumplir normativas. Preparamos a los perros para entornos históricos protegidos.'
+      }
+    ],
+    localTip: 'El Parque Canino Genil es perfecto para socialización. En verano, aprovecha las horas tempranas (7-9h) antes del calor intenso.',
+    testimonials: [
+      {
+        name: 'Ana García',
+        neighborhood: 'Realejo',
+        rating: 5,
+        text: 'Vivo en el centro histórico y mi perro tenía problemas con los turistas. Ahora es súper tranquilo.',
+        problem: 'Ansiedad con turistas'
+      },
+      {
+        name: 'Carlos López',
+        neighborhood: 'Zaidín',
+        rating: 5,
+        text: 'El calor de Granada complicaba los paseos. Ahora tenemos rutina perfecta adaptada al clima.',
+        problem: 'Paseos en verano'
+      },
+      {
+        name: 'María Jiménez',
+        neighborhood: 'Cartuja',
+        rating: 5,
+        text: 'Mi cachorro aprendió a socializar perfectamente en el Parque Genil. Excelente servicio.',
+        problem: 'Socialización cachorro'
+      }
+    ]
+  },
+  'cordoba': {
+    slug: 'cordoba',
+    parks: [
+      {
+        name: 'Parque Canino del Guadalquivir',
+        location: 'Ribera del Guadalquivir',
+        size: '1.000 m²',
+        features: [
+          'Vistas al río Guadalquivir',
+          'Amplio espacio vallado',
+          'Zona de agility',
+          'Bebederos múltiples',
+          'Separación por tamaños',
+          'Iluminación LED'
+        ],
+        schedule: 'Abierto 7:00 - 23:00h',
+        highlight: 'El más grande junto al río Guadalquivir'
+      },
+      {
+        name: 'Pipicán Parque de la Asomadilla',
+        location: 'Barrio de la Asomadilla',
+        size: '800 m²',
+        features: [
+          'Zona residencial',
+          'Césped natural',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'Ideal para socialización'
+      },
+      {
+        name: 'Zona Canina Centro',
+        location: 'Casco Histórico',
+        size: '400 m²',
+        features: [
+          'Cerca de Mezquita',
+          'Zona histórica',
+          'Césped artificial',
+          'Fuente de agua'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Calor Extremo Andaluz',
+        description: 'Córdoba es una de las ciudades más calurosas de España, alcanzando hasta 45°C en verano. Los inviernos son suaves pero los veranos son extremos.',
+        solution: 'Sesiones exclusivamente temprano (7-9h) o tarde (20-22h) en verano. Enseñamos a los perros a buscar sombra y beber agua constantemente.'
+      },
+      {
+        icon: 'urban',
+        title: 'Patrimonio Histórico y Turismo',
+        description: 'Córdoba recibe millones de turistas al año para ver la Mezquita. Muchos perros viven en el casco histórico con calles estrechas y mucho tráfico peatonal.',
+        solution: 'Educamos para respetar espacios históricos, convivencia con turistas y adaptación a calles estrechas del centro histórico.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Casco Histórico',
+        description: 'El casco histórico de Córdoba tiene ordenanzas específicas sobre perros. La zona de la Mezquita tiene restricciones especiales.',
+        solution: 'Conocemos todas las zonas restringidas y educamos para cumplir normativas. Preparamos a los perros para entornos históricos protegidos.'
+      }
+    ],
+    localTip: 'En verano, evita pasear entre 12-20h. El Parque del Guadalquivir tiene buena sombra natural. Aprovecha las horas tempranas junto al río.',
+    testimonials: [
+      {
+        name: 'Francisco Moreno',
+        neighborhood: 'Centro Histórico',
+        rating: 5,
+        text: 'Vivo en el casco histórico y mi perro tenía problemas con los turistas. Ahora pasea tranquilo.',
+        problem: 'Ansiedad con multitudes'
+      },
+      {
+        name: 'Isabel Romero',
+        neighborhood: 'Asomadilla',
+        rating: 5,
+        text: 'El calor de Córdoba complicaba todo. Ahora tenemos rutina perfecta adaptada al clima extremo.',
+        problem: 'Calor extremo'
+      },
+      {
+        name: 'Antonio Sánchez',
+        neighborhood: 'Guadalquivir',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar de los paseos junto al río. Excelente servicio profesional.',
+        problem: 'Falta de ejercicio'
+      }
+    ]
+  },
+  'torrevieja': {
+    slug: 'torrevieja',
+    parks: [
+      {
+        name: 'Parque Canino de las Lagunas',
+        location: 'Cerca de las Lagunas de Torrevieja',
+        size: '900 m²',
+        features: [
+          'Vistas a las lagunas',
+          'Amplio espacio vallado',
+          'Zona de agility',
+          'Bebederos automáticos',
+          'Separación por tamaños',
+          'Iluminación completa'
+        ],
+        schedule: 'Abierto 8:00 - 22:00h',
+        highlight: 'Único parque canino junto a las lagunas saladas'
+      },
+      {
+        name: 'Pipicán Paseo Marítimo',
+        location: 'Frente al mar',
+        size: '600 m²',
+        features: [
+          'Vistas al mar Mediterráneo',
+          'Césped artificial',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado en verano'
+        ],
+        highlight: 'Ubicación costera privilegiada'
+      },
+      {
+        name: 'Zona Canina Lo Pagán',
+        location: 'Zona Lo Pagán',
+        size: '500 m²',
+        features: [
+          'Zona residencial',
+          'Césped natural',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Clima Costero Mediterráneo',
+        description: 'Torrevieja tiene veranos calurosos (35°C) con alta humedad del mar. Muchos residentes son extranjeros que vienen en verano.',
+        solution: 'Adaptamos sesiones a horarios tempranos o tardíos. Enseñamos a los perros a manejar la humedad y evitar playas en horas de máxima afluencia.'
+      },
+      {
+        icon: 'urban',
+        title: 'Turismo Masivo Estacional',
+        description: 'Torrevieja multiplica su población en verano con turistas y residentes extranjeros. Muchos perros viven en urbanizaciones costeras.',
+        solution: 'Educamos para adaptación a cambios estacionales, convivencia con turistas internacionales y respeto a espacios costeros compartidos.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Playas y Lagunas',
+        description: 'Las playas tienen horarios específicos para perros. Las Lagunas de Torrevieja son Parque Natural con normativas de protección.',
+        solution: 'Conocemos horarios de playas caninas y educamos para respetar espacios naturales protegidos como las lagunas saladas.'
+      }
+    ],
+    localTip: 'Aprovecha las playas caninas fuera de temporada alta. El Parque de las Lagunas es ideal todo el año con menos turistas.',
+    testimonials: [
+      {
+        name: 'John Smith',
+        neighborhood: 'Lo Pagán',
+        rating: 5,
+        text: 'Soy residente extranjero y mi perro tenía problemas con el cambio. Ahora está perfectamente adaptado.',
+        problem: 'Adaptación cambio de vida'
+      },
+      {
+        name: 'María González',
+        neighborhood: 'Centro',
+        rating: 5,
+        text: 'En verano es imposible pasear con tanto turismo. Ahora tenemos rutina perfecta todo el año.',
+        problem: 'Turismo masivo'
+      },
+      {
+        name: 'Peter Johnson',
+        neighborhood: 'Paseo Marítimo',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar de las playas caninas respetando horarios. Excelente servicio.',
+        problem: 'Educación playera'
+      }
+    ]
+  },
+  'jerez-de-la-frontera': {
+    slug: 'jerez-de-la-frontera',
+    parks: [
+      {
+        name: 'Parque Canino González Hontoria',
+        location: 'Barrio González Hontoria',
+        size: '1.100 m²',
+        features: [
+          'Amplio espacio vallado',
+          'Zona de agility completa',
+          'Bebederos múltiples',
+          'Separación por tamaños',
+          'Iluminación LED',
+          'Césped natural'
+        ],
+        schedule: 'Abierto 7:00 - 23:00h',
+        highlight: 'El más grande y completo de Jerez'
+      },
+      {
+        name: 'Pipicán Parque de la Alameda',
+        location: 'Centro - Alameda Vieja',
+        size: '700 m²',
+        features: [
+          'Ubicación céntrica',
+          'Cerca de bodegas',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'En el corazón de Jerez'
+      },
+      {
+        name: 'Zona Canina La Cartuja',
+        location: 'Cerca de Real Escuela',
+        size: '600 m²',
+        features: [
+          'Zona de equitación',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking amplio'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Calor Andaluz Intenso',
+        description: 'Jerez alcanza hasta 42°C en verano con clima mediterráneo continental. Los inviernos son suaves pero los veranos son muy calurosos.',
+        solution: 'Sesiones temprano (7-9h) o tarde (20-22h) en verano. Enseñamos a los perros a buscar sombra y manejar el calor andaluz.'
+      },
+      {
+        icon: 'urban',
+        title: 'Ciudad del Vino y los Caballos',
+        description: 'Jerez es conocida por sus bodegas y la Real Escuela de Arte Ecuestre. Muchos perros viven en zonas cercanas a bodegas y establos.',
+        solution: 'Educamos para respetar espacios de bodegas, convivencia con caballos y adaptación a eventos ecuestres y vinícolas de la ciudad.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Zona Bodegas',
+        description: 'Las zonas de bodegas tienen ordenanzas específicas. Además, Jerez tiene normativas sobre perros en espacios públicos y eventos.',
+        solution: 'Conocemos normativas de zonas protegidas y educamos para cumplir ordenanzas municipales y respetar patrimonio vinícola.'
+      }
+    ],
+    localTip: 'El Parque González Hontoria es perfecto para socialización. En verano, aprovecha las horas tempranas antes del calor intenso.',
+    testimonials: [
+      {
+        name: 'Manuel Ruiz',
+        neighborhood: 'Centro',
+        rating: 5,
+        text: 'Vivo cerca de las bodegas y mi perro tenía problemas con los olores. Ahora está perfectamente adaptado.',
+        problem: 'Sensibilidad olfativa'
+      },
+      {
+        name: 'Carmen López',
+        neighborhood: 'González Hontoria',
+        rating: 5,
+        text: 'El calor de Jerez complicaba los paseos. Ahora tenemos rutina perfecta adaptada al clima.',
+        problem: 'Calor extremo'
+      },
+      {
+        name: 'Antonio García',
+        neighborhood: 'La Cartuja',
+        rating: 5,
+        text: 'Mi perro aprendió a convivir con caballos cerca de la Real Escuela. Excelente servicio.',
+        problem: 'Miedo a caballos'
+      }
+    ]
+  },
+  'sevilla': {
+    slug: 'sevilla',
+    parks: [
+      {
+        name: 'Parque Canino Alamillo',
+        location: 'Parque del Alamillo',
+        size: '1.500 m²',
+        features: [
+          'El más grande de Sevilla',
+          'Zona de agility completa',
+          'Bebederos múltiples',
+          'Separación por tamaños',
+          'Iluminación completa',
+          'Césped natural extenso'
+        ],
+        schedule: 'Abierto 7:00 - 23:00h',
+        highlight: 'El parque canino más grande de Andalucía'
+      },
+      {
+        name: 'Pipicán Parque María Luisa',
+        location: 'Parque de María Luisa',
+        size: '800 m²',
+        features: [
+          'Ubicación histórica',
+          'Cerca de Plaza de España',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'En el corazón histórico de Sevilla'
+      },
+      {
+        name: 'Zona Canina Guadalquivir',
+        location: 'Ribera del Guadalquivir',
+        size: '600 m²',
+        features: [
+          'Vistas al río',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      },
+      {
+        name: 'Parque Canino Los Príncipes',
+        location: 'Barrio Los Príncipes',
+        size: '700 m²',
+        features: [
+          'Zona residencial',
+          'Iluminación nocturna',
+          'Bebederos automáticos',
+          'Muy frecuentado'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Calor Extremo Andaluz',
+        description: 'Sevilla es una de las ciudades más calurosas de Europa, alcanzando hasta 45°C en verano. Los inviernos son suaves pero los veranos son extremadamente calurosos.',
+        solution: 'Sesiones exclusivamente temprano (7-9h) o tarde (20-22h) en verano. Enseñamos a los perros a buscar sombra constante y beber agua frecuentemente.'
+      },
+      {
+        icon: 'urban',
+        title: 'Ciudad Histórica y Turística',
+        description: 'Sevilla recibe millones de turistas al año. El casco histórico tiene calles estrechas, mucho tráfico peatonal y eventos culturales constantes.',
+        solution: 'Educamos para respetar espacios históricos, convivencia con turistas y adaptación a eventos culturales como Semana Santa y Feria.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Casco Histórico',
+        description: 'El casco histórico de Sevilla tiene ordenanzas específicas sobre perros. Zonas como la Catedral y Alcázar tienen restricciones especiales.',
+        solution: 'Conocemos todas las zonas restringidas y educamos para cumplir normativas. Preparamos a los perros para entornos históricos protegidos.'
+      }
+    ],
+    localTip: 'El Parque Alamillo es perfecto para socialización con mucho espacio. En verano, aprovecha las horas tempranas (7-9h) antes del calor extremo.',
+    testimonials: [
+      {
+        name: 'Rafael Moreno',
+        neighborhood: 'Centro Histórico',
+        rating: 5,
+        text: 'Vivo en el casco histórico y mi perro tenía problemas con los turistas. Ahora pasea tranquilo.',
+        problem: 'Ansiedad con multitudes'
+      },
+      {
+        name: 'Carmen Ruiz',
+        neighborhood: 'Los Príncipes',
+        rating: 5,
+        text: 'El calor de Sevilla complicaba todo. Ahora tenemos rutina perfecta adaptada al clima extremo.',
+        problem: 'Calor extremo'
+      },
+      {
+        name: 'Antonio Jiménez',
+        neighborhood: 'Alamillo',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar del Parque Alamillo. Excelente servicio profesional.',
+        problem: 'Falta de ejercicio'
+      }
+    ]
+  },
+  'malaga': {
+    slug: 'malaga',
+    parks: [
+      {
+        name: 'Parque Canino Málaga',
+        location: 'Parque de Málaga',
+        size: '1.200 m²',
+        features: [
+          'Vistas al mar Mediterráneo',
+          'Amplio espacio vallado',
+          'Zona de agility',
+          'Bebederos múltiples',
+          'Separación por tamaños',
+          'Iluminación completa'
+        ],
+        schedule: 'Abierto 7:00 - 23:00h',
+        highlight: 'El más grande con vistas al mar'
+      },
+      {
+        name: 'Pipicán Playas de Málaga',
+        location: 'Paseo Marítimo',
+        size: '700 m²',
+        features: [
+          'Frente al mar',
+          'Césped artificial',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'Ubicación costera privilegiada'
+      },
+      {
+        name: 'Zona Canina El Palo',
+        location: 'Barrio El Palo',
+        size: '600 m²',
+        features: [
+          'Zona residencial costera',
+          'Césped natural',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      },
+      {
+        name: 'Parque Canino Teatinos',
+        location: 'Campus Universitario',
+        size: '500 m²',
+        features: [
+          'Zona universitaria',
+          'Buena socialización',
+          'Iluminación nocturna'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Clima Mediterráneo Suave',
+        description: 'Málaga tiene uno de los climas más suaves de España, con veranos cálidos (30-35°C) pero no extremos. Los inviernos son muy suaves.',
+        solution: 'El clima permite más flexibilidad horaria. Aún así, evitamos horas centrales en verano y aprovechamos las brisas marinas.'
+      },
+      {
+        icon: 'urban',
+        title: 'Turismo Costero y Universitario',
+        description: 'Málaga combina turismo costero masivo, vida universitaria y zona residencial. Muchos perros viven en pisos cerca de la playa.',
+        solution: 'Educamos para adaptación a turismo estacional, convivencia en espacios costeros compartidos y respeto a zonas universitarias.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Playas',
+        description: 'Las playas tienen horarios específicos para perros. Algunas playas permiten perros todo el año, otras solo en invierno.',
+        solution: 'Conocemos horarios de todas las playas caninas y educamos para respetar normativas costeras y espacios públicos.'
+      }
+    ],
+    localTip: 'Aprovecha las playas caninas fuera de temporada alta. El Parque de Málaga es ideal todo el año con buen clima.',
+    testimonials: [
+      {
+        name: 'María González',
+        neighborhood: 'Centro',
+        rating: 5,
+        text: 'Vivo cerca de la playa y mi perro tenía problemas con el turismo. Ahora está perfectamente adaptado.',
+        problem: 'Ansiedad con turistas'
+      },
+      {
+        name: 'Carlos López',
+        neighborhood: 'El Palo',
+        rating: 5,
+        text: 'El clima de Málaga es perfecto para pasear. Ahora tenemos rutina ideal todo el año.',
+        problem: 'Rutina de paseos'
+      },
+      {
+        name: 'Ana Martínez',
+        neighborhood: 'Teatinos',
+        rating: 5,
+        text: 'Mi cachorro aprendió a socializar perfectamente en el Parque de Málaga. Excelente servicio.',
+        problem: 'Socialización cachorro'
+      }
+    ]
+  },
+  'castellon-de-la-plana': {
+    slug: 'castellon-de-la-plana',
+    parks: [
+      {
+        name: 'Parque Canino del Grao',
+        location: 'Zona del Grao',
+        size: '900 m²',
+        features: [
+          'Cerca del puerto',
+          'Amplio espacio vallado',
+          'Zona de agility',
+          'Bebederos automáticos',
+          'Separación por tamaños',
+          'Iluminación completa'
+        ],
+        schedule: 'Abierto 8:00 - 22:00h',
+        highlight: 'El más grande de Castellón'
+      },
+      {
+        name: 'Pipicán Parque Ribalta',
+        location: 'Parque Ribalta',
+        size: '700 m²',
+        features: [
+          'Ubicación céntrica',
+          'Césped natural',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'En el corazón de Castellón'
+      },
+      {
+        name: 'Zona Canina Playa del Pinar',
+        location: 'Playa del Pinar',
+        size: '500 m²',
+        features: [
+          'Frente al mar',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Clima Mediterráneo',
+        description: 'Castellón tiene veranos cálidos (32-35°C) con alta humedad del mar. Los inviernos son suaves con lluvias ocasionales.',
+        solution: 'Adaptamos sesiones a horarios tempranos o tardíos en verano. Enseñamos a los perros a manejar la humedad costera.'
+      },
+      {
+        icon: 'urban',
+        title: 'Ciudad Industrial y Costera',
+        description: 'Castellón combina industria cerámica, zona costera y turismo. Muchos perros viven en zonas residenciales cerca de playas.',
+        solution: 'Educamos para adaptación a ruidos industriales, convivencia costera y respeto a espacios turísticos compartidos.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Playas',
+        description: 'Las playas tienen horarios específicos para perros. Algunas playas permiten perros fuera de temporada alta.',
+        solution: 'Conocemos horarios de playas caninas y educamos para respetar normativas costeras y espacios públicos.'
+      }
+    ],
+    localTip: 'El Parque del Grao es perfecto para socialización. Aprovecha las playas caninas fuera de temporada alta.',
+    testimonials: [
+      {
+        name: 'José Martínez',
+        neighborhood: 'Centro',
+        rating: 5,
+        text: 'Vivo cerca de la industria y mi perro tenía problemas con los ruidos. Ahora está perfectamente adaptado.',
+        problem: 'Miedo a ruidos'
+      },
+      {
+        name: 'Carmen Ruiz',
+        neighborhood: 'Grao',
+        rating: 5,
+        text: 'El clima de Castellón permite paseos todo el año. Ahora tenemos rutina perfecta.',
+        problem: 'Rutina de paseos'
+      },
+      {
+        name: 'Antonio García',
+        neighborhood: 'Playa del Pinar',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar de las playas caninas. Excelente servicio.',
+        problem: 'Educación playera'
+      }
+    ]
+  },
+  'gandia': {
+    slug: 'gandia',
+    parks: [
+      {
+        name: 'Parque Canino Playa de Gandía',
+        location: 'Paseo Marítimo',
+        size: '800 m²',
+        features: [
+          'Frente al mar Mediterráneo',
+          'Amplio espacio vallado',
+          'Zona de agility',
+          'Bebederos automáticos',
+          'Separación por tamaños',
+          'Iluminación completa'
+        ],
+        schedule: 'Abierto 8:00 - 22:00h',
+        highlight: 'Ubicación costera privilegiada'
+      },
+      {
+        name: 'Pipicán Parque de la Estación',
+        location: 'Cerca de la estación',
+        size: '600 m²',
+        features: [
+          'Ubicación céntrica',
+          'Césped natural',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'En el centro de Gandía'
+      },
+      {
+        name: 'Zona Canina Playa Norte',
+        location: 'Playa Norte',
+        size: '500 m²',
+        features: [
+          'Frente al mar',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Clima Mediterráneo Costero',
+        description: 'Gandía tiene veranos cálidos (30-34°C) con alta humedad del mar. Los inviernos son muy suaves.',
+        solution: 'Adaptamos sesiones a horarios tempranos o tardíos en verano. Enseñamos a los perros a manejar la humedad costera.'
+      },
+      {
+        icon: 'urban',
+        title: 'Turismo Masivo Estacional',
+        description: 'Gandía multiplica su población en verano con turistas nacionales e internacionales. Muchos perros viven en urbanizaciones costeras.',
+        solution: 'Educamos para adaptación a cambios estacionales, convivencia con turistas y respeto a espacios costeros compartidos.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Playas',
+        description: 'Las playas tienen horarios específicos para perros. Algunas playas permiten perros fuera de temporada alta.',
+        solution: 'Conocemos horarios de playas caninas y educamos para respetar normativas costeras y espacios públicos.'
+      }
+    ],
+    localTip: 'Aprovecha las playas caninas fuera de temporada alta. El Parque del Paseo Marítimo es ideal todo el año.',
+    testimonials: [
+      {
+        name: 'María López',
+        neighborhood: 'Centro',
+        rating: 5,
+        text: 'En verano es imposible pasear con tanto turismo. Ahora tenemos rutina perfecta todo el año.',
+        problem: 'Turismo masivo'
+      },
+      {
+        name: 'Carlos Ruiz',
+        neighborhood: 'Playa Norte',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar de las playas caninas respetando horarios. Excelente servicio.',
+        problem: 'Educación playera'
+      },
+      {
+        name: 'Ana Martínez',
+        neighborhood: 'Paseo Marítimo',
+        rating: 5,
+        text: 'El clima de Gandía permite paseos todo el año. Ahora tenemos rutina perfecta.',
+        problem: 'Rutina de paseos'
+      }
+    ]
   }
 }
 
