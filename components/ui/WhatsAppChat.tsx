@@ -7,7 +7,7 @@ export default function WhatsAppChat() {
   const [isOpen, setIsOpen] = useState(false)
   const [message, setMessage] = useState('')
 
-  const phoneNumber = '34612345678' // Número de WhatsApp (sin +)
+  const phoneNumber = '34685648241' // Número de WhatsApp (sin +)
   const defaultMessage = 'Hola, me gustaría obtener más información sobre sus servicios de educación canina.'
 
   const handleSend = () => {

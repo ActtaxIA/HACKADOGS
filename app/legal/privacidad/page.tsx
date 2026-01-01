@@ -43,7 +43,7 @@ export default function PrivacidadPage() {
             <li><strong>CIF/NIF:</strong> [Pendiente de completar]</li>
             <li><strong>Dirección:</strong> Murcia, España</li>
             <li><strong>Email:</strong> privacidad@hakadogs.com</li>
-            <li><strong>Teléfono:</strong> 612 34 56 78</li>
+            <li><strong>Teléfono:</strong> 685 64 82 41</li>
           </ul>
 
           <h2>2. Datos que Recopilamos</h2>
@@ -297,7 +297,7 @@ export default function PrivacidadPage() {
           </p>
           <ul>
             <li><strong>Email:</strong> privacidad@hakadogs.com</li>
-            <li><strong>Teléfono:</strong> 612 34 56 78</li>
+            <li><strong>Teléfono:</strong> 685 64 82 41</li>
             <li><strong>Dirección postal:</strong> Hakadogs, Murcia, España</li>
           </ul>
 

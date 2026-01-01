@@ -63,7 +63,7 @@ export default function ContactoPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-forest-dark mb-1">Teléfono</h3>
-                    <a href="tel:685648241" className="text-gray-700 hover:text-forest transition">
+                    <a href="tel:+34685648241" className="text-gray-700 hover:text-forest transition">
                       685 64 82 41
                     </a>
                     <p className="text-sm text-gray-500 mt-1">Lun-Sab: 9:00 - 20:00</p>

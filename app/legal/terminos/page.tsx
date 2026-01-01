@@ -213,7 +213,7 @@ export default function TerminosPage() {
           </p>
           <ul>
             <li><strong>Email:</strong> legal@hakadogs.com</li>
-            <li><strong>Teléfono:</strong> 612 34 56 78</li>
+            <li><strong>Teléfono:</strong> 685 64 82 41</li>
             <li><strong>Dirección:</strong> Hakadogs, Murcia, España</li>
           </ul>
 
