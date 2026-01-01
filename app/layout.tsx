@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import BackToTop from '@/components/ui/BackToTop'
+import WhatsAppChat from '@/components/ui/WhatsAppChat'
 
 export const metadata: Metadata = {
   title: 'Hakadogs - Educación Canina Profesional en Archena y Murcia',
@@ -27,6 +29,8 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
+        <WhatsAppChat />
       </body>
     </html>
   )
