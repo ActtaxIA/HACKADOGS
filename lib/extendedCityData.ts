@@ -3207,6 +3207,446 @@ export const extendedCityData: Record<string, ExtendedCityData> = {
         problem: 'Rutina de paseos'
       }
     ]
+  },
+  'huelva': {
+    slug: 'huelva',
+    parks: [
+      {
+        name: 'Parque Canino Moret',
+        location: 'Parque Moret',
+        size: '1.000 m²',
+        features: [
+          'Amplio espacio vallado',
+          'Zona de agility',
+          'Bebederos múltiples',
+          'Separación por tamaños',
+          'Iluminación completa',
+          'Césped natural'
+        ],
+        schedule: 'Abierto 7:00 - 23:00h',
+        highlight: 'El más grande de Huelva'
+      },
+      {
+        name: 'Pipicán Parque de las Palomas',
+        location: 'Centro',
+        size: '600 m²',
+        features: [
+          'Ubicación céntrica',
+          'Césped natural',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'En el centro de Huelva'
+      },
+      {
+        name: 'Zona Canina Punta Umbría',
+        location: 'Cerca de Punta Umbría',
+        size: '500 m²',
+        features: [
+          'Zona costera',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Clima Atlántico Suave',
+        description: 'Huelva tiene un clima atlántico más suave que otras ciudades andaluzas, con veranos cálidos (30-33°C) pero menos extremos. Los inviernos son suaves.',
+        solution: 'El clima permite más flexibilidad horaria. Aún así, evitamos horas centrales en verano y aprovechamos las brisas atlánticas.'
+      },
+      {
+        icon: 'urban',
+        title: 'Ciudad Industrial y Costera',
+        description: 'Huelva combina industria química, zona costera y turismo. Muchos perros viven en zonas residenciales cerca de playas y polígonos industriales.',
+        solution: 'Educamos para adaptación a ruidos industriales, convivencia costera y respeto a espacios turísticos compartidos.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Playas y Espacios Naturales',
+        description: 'Las playas tienen horarios específicos para perros. El Parque Natural de Doñana tiene normativas especiales de protección.',
+        solution: 'Conocemos horarios de playas caninas y educamos para respetar espacios naturales protegidos como Doñana.'
+      }
+    ],
+    localTip: 'El Parque Moret es perfecto para socialización. Aprovecha las playas caninas de Punta Umbría fuera de temporada alta.',
+    testimonials: [
+      {
+        name: 'José López',
+        neighborhood: 'Centro',
+        rating: 5,
+        text: 'Vivo cerca de la industria y mi perro tenía problemas con los ruidos. Ahora está perfectamente adaptado.',
+        problem: 'Miedo a ruidos'
+      },
+      {
+        name: 'María Ruiz',
+        neighborhood: 'Punta Umbría',
+        rating: 5,
+        text: 'El clima de Huelva permite paseos todo el año. Ahora tenemos rutina perfecta.',
+        problem: 'Rutina de paseos'
+      },
+      {
+        name: 'Antonio García',
+        neighborhood: 'Moret',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar del Parque Moret. Excelente servicio.',
+        problem: 'Falta de ejercicio'
+      }
+    ]
+  },
+  'cadiz': {
+    slug: 'cadiz',
+    parks: [
+      {
+        name: 'Parque Canino Genovés',
+        location: 'Parque Genovés',
+        size: '800 m²',
+        features: [
+          'Vistas al mar Atlántico',
+          'Amplio espacio vallado',
+          'Zona de agility',
+          'Bebederos múltiples',
+          'Separación por tamaños',
+          'Iluminación completa'
+        ],
+        schedule: 'Abierto 7:00 - 23:00h',
+        highlight: 'Ubicación costera privilegiada'
+      },
+      {
+        name: 'Pipicán Campo del Sur',
+        location: 'Campo del Sur',
+        size: '600 m²',
+        features: [
+          'Frente al mar',
+          'Césped artificial',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'En el corazón histórico de Cádiz'
+      },
+      {
+        name: 'Zona Canina La Caleta',
+        location: 'Playa de La Caleta',
+        size: '500 m²',
+        features: [
+          'Frente al mar',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Clima Atlántico Suave',
+        description: 'Cádiz tiene un clima atlántico muy suave, con veranos cálidos (28-32°C) pero moderados por el mar. Los inviernos son muy suaves.',
+        solution: 'El clima permite flexibilidad horaria. Aprovechamos las brisas marinas y evitamos horas centrales en verano.'
+      },
+      {
+        icon: 'urban',
+        title: 'Ciudad Histórica y Costera',
+        description: 'Cádiz es una ciudad histórica rodeada de mar. Muchos perros viven en el casco histórico con calles estrechas y mucho tráfico peatonal.',
+        solution: 'Educamos para respetar espacios históricos, convivencia en calles estrechas y adaptación a vida costera.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Playas y Casco Histórico',
+        description: 'Las playas tienen horarios específicos para perros. El casco histórico tiene ordenanzas específicas sobre perros.',
+        solution: 'Conocemos horarios de playas caninas y educamos para cumplir normativas del casco histórico.'
+      }
+    ],
+    localTip: 'El Parque Genovés es perfecto para socialización con vistas al mar. Aprovecha las playas caninas fuera de temporada alta.',
+    testimonials: [
+      {
+        name: 'Carmen López',
+        neighborhood: 'Centro Histórico',
+        rating: 5,
+        text: 'Vivo en el casco histórico y mi perro tenía problemas con las calles estrechas. Ahora pasea tranquilo.',
+        problem: 'Ansiedad en espacios reducidos'
+      },
+      {
+        name: 'Antonio Ruiz',
+        neighborhood: 'Campo del Sur',
+        rating: 5,
+        text: 'El clima de Cádiz es perfecto para pasear. Ahora tenemos rutina ideal todo el año.',
+        problem: 'Rutina de paseos'
+      },
+      {
+        name: 'María García',
+        neighborhood: 'La Caleta',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar de las playas caninas. Excelente servicio.',
+        problem: 'Educación playera'
+      }
+    ]
+  },
+  'marbella': {
+    slug: 'marbella',
+    parks: [
+      {
+        name: 'Parque Canino de Marbella',
+        location: 'Nueva Alcántara',
+        size: '1.100 m²',
+        features: [
+          'Amplio espacio vallado',
+          'Zona de agility completa',
+          'Bebederos múltiples',
+          'Separación por tamaños',
+          'Iluminación LED',
+          'Césped natural'
+        ],
+        schedule: 'Abierto 7:00 - 23:00h',
+        highlight: 'El más grande y completo de Marbella'
+      },
+      {
+        name: 'Pipicán Paseo Marítimo',
+        location: 'Paseo Marítimo',
+        size: '700 m²',
+        features: [
+          'Frente al mar Mediterráneo',
+          'Césped artificial',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'Ubicación costera privilegiada'
+      },
+      {
+        name: 'Zona Canina Puerto Banús',
+        location: 'Cerca de Puerto Banús',
+        size: '600 m²',
+        features: [
+          'Zona de lujo',
+          'Césped natural',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Clima Mediterráneo Ideal',
+        description: 'Marbella tiene uno de los mejores climas de España, con veranos cálidos (30-33°C) pero moderados por el mar. Los inviernos son muy suaves.',
+        solution: 'El clima permite flexibilidad horaria. Aún así, evitamos horas centrales en verano y aprovechamos las brisas marinas.'
+      },
+      {
+        icon: 'urban',
+        title: 'Turismo de Lujo y Residencial',
+        description: 'Marbella combina turismo de lujo (Puerto Banús), zonas residenciales exclusivas y turismo masivo en verano. Muchos perros viven en urbanizaciones de lujo.',
+        solution: 'Educamos para adaptación a turismo estacional, convivencia en espacios exclusivos y respeto a zonas residenciales de lujo.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Playas y Zonas Exclusivas',
+        description: 'Las playas tienen horarios específicos para perros. Algunas zonas exclusivas tienen normativas adicionales.',
+        solution: 'Conocemos horarios de todas las playas caninas y educamos para respetar normativas de zonas exclusivas.'
+      }
+    ],
+    localTip: 'El Parque de Nueva Alcántara es perfecto para socialización. Aprovecha las playas caninas fuera de temporada alta.',
+    testimonials: [
+      {
+        name: 'John Smith',
+        neighborhood: 'Puerto Banús',
+        rating: 5,
+        text: 'Soy residente extranjero y mi perro tenía problemas con el cambio. Ahora está perfectamente adaptado.',
+        problem: 'Adaptación cambio de vida'
+      },
+      {
+        name: 'María González',
+        neighborhood: 'Nueva Alcántara',
+        rating: 5,
+        text: 'En verano es imposible pasear con tanto turismo. Ahora tenemos rutina perfecta todo el año.',
+        problem: 'Turismo masivo'
+      },
+      {
+        name: 'Carlos Ruiz',
+        neighborhood: 'Paseo Marítimo',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar de las playas caninas. Excelente servicio.',
+        problem: 'Educación playera'
+      }
+    ]
+  },
+  'algeciras': {
+    slug: 'algeciras',
+    parks: [
+      {
+        name: 'Parque Canino del Rinconcillo',
+        location: 'Playa del Rinconcillo',
+        size: '900 m²',
+        features: [
+          'Frente al mar',
+          'Amplio espacio vallado',
+          'Zona de agility',
+          'Bebederos automáticos',
+          'Separación por tamaños',
+          'Iluminación completa'
+        ],
+        schedule: 'Abierto 8:00 - 22:00h',
+        highlight: 'Ubicación costera privilegiada'
+      },
+      {
+        name: 'Pipicán Parque María Cristina',
+        location: 'Parque María Cristina',
+        size: '600 m²',
+        features: [
+          'Ubicación céntrica',
+          'Césped natural',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'En el centro de Algeciras'
+      },
+      {
+        name: 'Zona Canina Getares',
+        location: 'Playa de Getares',
+        size: '500 m²',
+        features: [
+          'Frente al mar',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Clima Mediterráneo con Viento',
+        description: 'Algeciras tiene veranos cálidos (30-33°C) con vientos frecuentes del Estrecho de Gibraltar. Los inviernos son suaves.',
+        solution: 'Adaptamos sesiones aprovechando los vientos que refrescan. Enseñamos a los perros a manejar vientos fuertes.'
+      },
+      {
+        icon: 'urban',
+        title: 'Ciudad Portuaria y Fronteriza',
+        description: 'Algeciras es el principal puerto hacia África. Combina tráfico portuario, turismo y zona residencial. Muchos perros viven cerca del puerto.',
+        solution: 'Educamos para adaptación a ruidos portuarios, convivencia con tráfico internacional y respeto a espacios portuarios.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Playas y Puerto',
+        description: 'Las playas tienen horarios específicos para perros. La zona portuaria tiene normativas de seguridad adicionales.',
+        solution: 'Conocemos horarios de playas caninas y educamos para respetar normativas portuarias y espacios de seguridad.'
+      }
+    ],
+    localTip: 'El Parque del Rinconcillo es perfecto para socialización. Aprovecha las playas caninas fuera de temporada alta.',
+    testimonials: [
+      {
+        name: 'José Martínez',
+        neighborhood: 'Centro',
+        rating: 5,
+        text: 'Vivo cerca del puerto y mi perro tenía problemas con los ruidos. Ahora está perfectamente adaptado.',
+        problem: 'Miedo a ruidos'
+      },
+      {
+        name: 'Carmen López',
+        neighborhood: 'Getares',
+        rating: 5,
+        text: 'El viento de Algeciras complicaba los paseos. Ahora tenemos rutina perfecta adaptada.',
+        problem: 'Vientos fuertes'
+      },
+      {
+        name: 'Antonio García',
+        neighborhood: 'Rinconcillo',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar de las playas caninas. Excelente servicio.',
+        problem: 'Educación playera'
+      }
+    ]
+  },
+  'dos-hermanas': {
+    slug: 'dos-hermanas',
+    parks: [
+      {
+        name: 'Parque Canino de Dos Hermanas',
+        location: 'Parque de la Alquería',
+        size: '1.000 m²',
+        features: [
+          'Amplio espacio vallado',
+          'Zona de agility',
+          'Bebederos múltiples',
+          'Separación por tamaños',
+          'Iluminación completa',
+          'Césped natural'
+        ],
+        schedule: 'Abierto 7:00 - 23:00h',
+        highlight: 'El más grande de Dos Hermanas'
+      },
+      {
+        name: 'Pipicán Parque de los Pinos',
+        location: 'Barrio Los Pinos',
+        size: '600 m²',
+        features: [
+          'Zona residencial',
+          'Césped natural',
+          'Bancos con sombra',
+          'Dispensadores de bolsas',
+          'Muy frecuentado'
+        ],
+        highlight: 'Ideal para socialización'
+      },
+      {
+        name: 'Zona Canina Montequinto',
+        location: 'Montequinto',
+        size: '500 m²',
+        features: [
+          'Zona residencial',
+          'Césped artificial',
+          'Fuente de agua',
+          'Parking cercano'
+        ]
+      }
+    ],
+    challenges: [
+      {
+        icon: 'heat',
+        title: 'Calor Extremo Andaluz',
+        description: 'Dos Hermanas comparte el clima extremo de Sevilla, alcanzando hasta 45°C en verano. Los inviernos son suaves.',
+        solution: 'Sesiones exclusivamente temprano (7-9h) o tarde (20-22h) en verano. Enseñamos a los perros a buscar sombra constante.'
+      },
+      {
+        icon: 'urban',
+        title: 'Ciudad Dormitorio de Sevilla',
+        description: 'Dos Hermanas es una ciudad dormitorio de Sevilla con muchas urbanizaciones residenciales. Muchos perros viven en zonas residenciales tranquilas.',
+        solution: 'Educamos para convivencia en zonas residenciales, adaptación a vida tranquila y preparación para viajes a Sevilla.'
+      },
+      {
+        icon: 'regulation',
+        title: 'Normativa Residencial',
+        description: 'Las urbanizaciones tienen normativas específicas sobre perros. Además, Dos Hermanas tiene ordenanzas municipales.',
+        solution: 'Conocemos normativas de urbanizaciones y educamos para cumplir ordenanzas municipales y respetar espacios residenciales.'
+      }
+    ],
+    localTip: 'El Parque de la Alquería es perfecto para socialización. En verano, aprovecha las horas tempranas antes del calor extremo.',
+    testimonials: [
+      {
+        name: 'María Ruiz',
+        neighborhood: 'Los Pinos',
+        rating: 5,
+        text: 'Vivo en una urbanización y mi perro tenía problemas con otros perros. Ahora socializa perfectamente.',
+        problem: 'Socialización'
+      },
+      {
+        name: 'José López',
+        neighborhood: 'Montequinto',
+        rating: 5,
+        text: 'El calor de Dos Hermanas complicaba los paseos. Ahora tenemos rutina perfecta adaptada.',
+        problem: 'Calor extremo'
+      },
+      {
+        name: 'Carmen García',
+        neighborhood: 'Centro',
+        rating: 5,
+        text: 'Mi perro aprendió a disfrutar del Parque de la Alquería. Excelente servicio.',
+        problem: 'Falta de ejercicio'
+      }
+    ]
   }
 }
 
