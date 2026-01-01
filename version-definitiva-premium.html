@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakadogs — Educación Canina Profesional en Archena, Murcia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --forest-dark: #1a3d23;
+            --forest: #2a5934;
+            --sage: #6b8e5f;
+            --gold: #c9a961;
+            --terracotta: #d4735e;
+            --charcoal: #2d2d2d;
+            --ash: #4a4a4a;
+            --cream: #f9f6f1;
+            --sand: #e8e4dc;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        /* Typography Refinement */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation Sophisticated */
+        .nav-refined {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-refined.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 20px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--forest) 0%, var(--sage) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .brand:hover .brand-mark {
+            transform: translateY(-2px);
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--forest-dark);
+            letter-spacing: -0.03em;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--ash);
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-menu a:hover {
+            color: var(--forest);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.75rem 1.5rem;
+            background: var(--forest);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-cta:hover {
+            background: var(--forest-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(42, 89, 52, 0.2);
+        }
+
+        /* Hero Refined */
+        .hero-refined {
+            margin-top: 85px;
+            min-height: 90vh;
+            background: linear-gradient(to bottom, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-refined::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at top right, rgba(107, 142, 95, 0.08) 0%, transparent 60%);
+        }
+
+        .hero-content-refined {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 3rem 4rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-text-refined {
+            max-width: 650px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text-refined h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            color: var(--forest-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-text-refined h1 .accent {
+            color: var(--gold);
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--ash);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: var(--ash);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .metric {
+            text-align: left;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 0.3rem;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--ash);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--forest);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--forest-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(42, 89, 52, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--forest);
+            border: 1.5px solid var(--forest);
+        }
+
+        .btn-secondary:hover {
+            background: var(--forest);
+            color: white;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 600px;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(10px);
+        }
+
+        .floating-badge-1 {
+            top: 8%;
+            right: -6%;
+        }
+
+        .floating-badge-2 {
+            bottom: 10%;
+            left: -6%;
+        }
+
+        .badge-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 0.2rem;
+        }
+
+        .badge-label {
+            font-size: 0.85rem;
+            color: var(--ash);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 8rem 3rem;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin-bottom: 5rem;
+        }
+
+        .section-overline {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            color: var(--forest-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--ash);
+            line-height: 1.7;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            color: var(--forest-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-content .lead {
+            font-size: 1.15rem;
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--ash);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-quote {
+            background: var(--cream);
+            border-left: 3px solid var(--gold);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .about-quote p {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--forest);
+            margin: 0;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .about-images img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-images img:first-child {
+            grid-column: span 2;
+            height: 350px;
+        }
+
+        /* Services Premium */
+        .services-premium {
+            padding: 8rem 3rem;
+            background: var(--cream);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--gold);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--forest) 0%, var(--sage) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .service-title h3 {
+            font-size: 1.6rem;
+            color: var(--forest-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .service-category {
+            font-size: 0.85rem;
+            color: var(--terracotta);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .service-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--ash);
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--ash);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: var(--sage);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Process Timeline */
+        .process-section {
+            padding: 8rem 3rem;
+            background: white;
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--sage) 0%, var(--gold) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 90px;
+            padding-bottom: 4rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 3px solid var(--forest);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--forest);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.6rem;
+            color: var(--forest-dark);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--ash);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 8rem 3rem;
+            background: var(--cream);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-rating {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--ash);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--sage), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            color: var(--forest-dark);
+            margin-bottom: 0.2rem;
+            font-weight: 600;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: var(--ash);
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            padding: 8rem 3rem;
+            background: var(--forest-dark);
+            color: white;
+        }
+
+        .philosophy-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .philosophy-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .philosophy-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .philosophy-content .highlight {
+            color: var(--gold);
+        }
+
+        .philosophy-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy-values {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .value {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .value-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .value-text {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 3rem;
+            background: linear-gradient(135deg, var(--terracotta) 0%, var(--gold) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.1rem;
+            background: white;
+            color: var(--terracotta);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-cta-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-cta-outline:hover {
+            background: white;
+            color: var(--terracotta);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 5rem 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .social-link:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-content-refined {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid,
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-text-refined h1 {
+                font-size: 3rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-refined">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <div class="brand-mark">🐕</div>
+                <div class="brand-name">Hakadogs</div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+            </ul>
+            <a href="tel:+34685648241" class="nav-cta">
+                <span>685 64 82 41</span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero-refined" id="inicio">
+        <div class="hero-content-refined">
+            <div class="hero-text-refined">
+                <div class="hero-label">Educación Canina Profesional</div>
+                <h1>Un vínculo más fuerte empieza con <span class="accent">respeto</span></h1>
+                <p class="hero-tagline">Hakadogs — Un sueño hecho realidad</p>
+                <p class="hero-description">
+                    Desde que decides tener un perro, se te presentan múltiples retos. En Hakadogs te acompaño con conocimientos, estrategias y una metodología basada en el respeto absoluto hacia tu compañero. Sin castigos, sin intimidación, solo comunicación clara y resultados duraderos.
+                </p>
+
+                <div class="hero-metrics">
+                    <div class="metric">
+                        <div class="metric-value">500+</div>
+                        <div class="metric-label">Perros educados</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">8+</div>
+                        <div class="metric-label">Años experiencia</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Métodos positivos</div>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#contacto" class="btn btn-primary">
+                        Contáctanos sin compromiso
+                    </a>
+                    <a href="#servicios" class="btn btn-secondary">
+                        Ver servicios
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=700&h=700&fit=crop" alt="Educación canina profesional" class="hero-image-main">
+                
+                <div class="floating-badge floating-badge-1">
+                    <div class="badge-value">★ 5.0</div>
+                    <div class="badge-label">Valoración media</div>
+                </div>
+
+                <div class="floating-badge floating-badge-2">
+                    <div class="badge-value">BE HAKA!</div>
+                    <div class="badge-label">Nuestra filosofía</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="nosotros">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-overline">Sobre Nosotros</div>
+                <h2>Una vida dedicada a entender a los perros</h2>
+                <p>La educación canina va mucho más allá de enseñar comandos. Se trata de construir una relación basada en la confianza, el respeto y la comunicación efectiva.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Alfredo — Educador Canino Profesional</h3>
+                    <p class="lead">Una pasión convertida en profesión</p>
+                    <p>
+                        Hola, me llamo Alfredo y he crecido rodeado de perros. Esta convivencia natural me llevó a profesionalizarme en educación canina, especializándome en métodos basados en el refuerzo positivo y la etología aplicada.
+                    </p>
+                    <p>
+                        Elegí la metodología que aplico por mi filosofía de respeto absoluto hacia el perro. He perfeccionado estas herramientas durante años de práctica y formación continua, y ahora te las ofrezco para transformar la relación con tu compañero.
+                    </p>
+                    <div class="about-quote">
+                        <p>"El objetivo es que aprendas a entender mejor a tu perro, consiguiendo control y un vínculo más fuerte basado en una comunicación clara. Desarrollamos mejores niveles de atención, fomentamos la relajación y enseñamos a responder de manera apropiada, sin forzar ni intimidar."</p>
+                    </div>
+                    <p>
+                        Con más de 8 años de experiencia y más de 500 perros educados, cada día aprendo algo nuevo. Porque cada perro es único, cada familia es diferente, y eso es lo que hace este trabajo tan apasionante.
+                    </p>
+                </div>
+
+                <div class="about-images">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=700&h=400&fit=crop" alt="Alfredo trabajando con perro">
+                    <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?w=350&h=250&fit=crop" alt="Educación canina">
+                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=350&h=250&fit=crop" alt="Cachorro feliz">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-premium" id="servicios">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-overline">Nuestros Servicios</div>
+                <h2>Programas diseñados para cada necesidad</h2>
+                <p>Desde la educación básica hasta la modificación de conductas complejas, ofrecemos soluciones personalizadas para cada etapa de la vida de tu perro.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🎓</div>
+                        <div class="service-title">
+                            <h3>Educación Básica</h3>
+                            <div class="service-category">ADIESTRAMIENTO FUNDAMENTAL</div>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        Programa completo que establece las bases de una convivencia armoniosa. Ideal para perros de cualquier edad que necesiten aprender los comandos esenciales y desarrollar buenos hábitos de comportamiento.
+                    </p>
+                    <ul class="service-features">
+                        <li>Comandos básicos completos: sentado, quieto, aquí, tumba, junto</li>
+                        <li>Paseo relajado sin tirones ni estrés en la correa</li>
+                        <li>Control de impulsos y gestión efectiva de la energía</li>
+                        <li>Socialización apropiada con personas y otros perros</li>
+                        <li>Técnicas de relajación y desarrollo del autocontrol</li>
+                        <li>Protocolos de llamada y recuerdo en diferentes situaciones</li>
+                        <li>Educación en la convivencia diaria en el hogar</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🧠</div>
+                        <div class="service-title">
+                            <h3>Modificación de Conductas</h3>
+                            <div class="service-category">ETOLOGÍA Y COMPORTAMIENTO</div>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        Trabajamos problemas de comportamiento desde su origen utilizando conocimientos profundos de etología canina y medicina del comportamiento. Soluciones efectivas y duraderas, no parches temporales.
+                    </p>
+                    <ul class="service-features">
+                        <li>Agresividad hacia personas, perros u otros animales</li>
+                        <li>Ansiedad por separación y problemas de apego</li>
+                        <li>Miedos, fobias y traumas (ruidos, veterinario, espacios)</li>
+                        <li>Ladridos excesivos y vocalizaciones inadecuadas</li>
+                        <li>Conductas destructivas en el hogar</li>
+                        <li>Problemas de territorialidad y protección de recursos</li>
+                        <li>Hiperactividad y falta de autocontrol</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🐕</div>
+                        <div class="service-title">
+                            <h3>Educación de Cachorros</h3>
+                            <div class="service-category">PUPPY PARTY Y SOCIALIZACIÓN</div>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        Los primeros meses son cruciales. Nuestro programa de socialización temprana previene problemas futuros y asegura que tu cachorro crezca equilibrado, confiado y feliz. La prevención es la mejor inversión.
+                    </p>
+                    <ul class="service-features">
+                        <li>Socialización segura con perros de diferentes edades y razas</li>
+                        <li>Habituación a múltiples entornos, sonidos y estímulos</li>
+                        <li>Prevención de problemas comportamentales futuros</li>
+                        <li>Desarrollo de mordida inhibida y juego apropiado</li>
+                        <li>Primeros comandos básicos adaptados a su edad</li>
+                        <li>Gestión de la energía y enseñanza de momentos de calma</li>
+                        <li>Pautas de convivencia y rutinas saludables</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">👥</div>
+                        <div class="service-title">
+                            <h3>Clases Grupales</h3>
+                            <div class="service-category">SOCIALIZACIÓN Y PRÁCTICA</div>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        Sesiones en grupo reducido donde tu perro aprende a comportarse correctamente en entornos con distracciones mientras refuerza todo lo aprendido. Práctica real para resultados reales.
+                    </p>
+                    <ul class="service-features">
+                        <li>Grupos reducidos de máximo 6 perros para atención personalizada</li>
+                        <li>Práctica en entornos reales con diferentes niveles de distracción</li>
+                        <li>Mejora continua de habilidades sociales caninas</li>
+                        <li>Refuerzo de todos los comandos previamente aprendidos</li>
+                        <li>Actividades variadas y ejercicios de estimulación mental</li>
+                        <li>Comunidad de apoyo entre propietarios</li>
+                        <li>Progresión gradual hacia entornos más desafiantes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section" id="proceso">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-overline">Nuestro Proceso</div>
+                <h2>Cómo trabajamos en Hakadogs</h2>
+                <p>Un método probado que ha transformado la vida de más de 500 familias y sus perros.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Evaluación Inicial Completa</h3>
+                        <p>
+                            Comenzamos con una evaluación exhaustiva del comportamiento actual de tu perro, su historia, temperamento, entorno familiar y tus objetivos específicos. Cada perro es único y merece un plan completamente personalizado. Analizamos en profundidad para diseñar la estrategia más efectiva.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Diseño del Plan Personalizado</h3>
+                        <p>
+                            Creamos un programa específico adaptado a las necesidades individuales de tu perro, considerando su edad, raza, temperamento, historia previa y tu estilo de vida. Establecemos objetivos claros, medibles y alcanzables con un cronograma realista.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Sesiones Prácticas y Teóricas</h3>
+                        <p>
+                            Trabajamos juntos en sesiones donde tanto tú como tu perro aprenden activamente. Te enseñamos las técnicas exactas, los timings precisos, el lenguaje corporal apropiado y todas las herramientas necesarias para comunicarte efectivamente con tu compañero. La teoría se combina con práctica real.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Práctica y Generalización</h3>
+                        <p>
+                            Practicamos en diferentes entornos para asegurar que tu perro responde correctamente en cualquier situación. Generalizamos los comandos y comportamientos aprendidos, trabajando con distintos niveles de distracción para garantizar resultados sólidos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <h3>Seguimiento Continuo</h3>
+                        <p>
+                            No te dejamos solo después de las sesiones. Ofrecemos seguimiento continuo, resolución de dudas, ajustes al plan según sea necesario y soporte para asegurar que los resultados se mantengan a largo plazo. Tu éxito es nuestro éxito.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">6</div>
+                    <div class="timeline-content">
+                        <h3>Relación Transformada</h3>
+                        <p>
+                            El resultado final es un perro equilibrado, feliz y bien educado, y una relación transformada entre tú y tu compañero basada en la comunicación clara, el respeto mutuo y la confianza absoluta. Una convivencia armoniosa que durará toda la vida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy-section">
+        <div class="philosophy-grid">
+            <div class="philosophy-image">
+                <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?w=600&h=700&fit=crop" alt="Filosofía Hakadogs">
+            </div>
+            <div class="philosophy-content">
+                <h2>Nuestra <span class="highlight">Filosofía</span></h2>
+                <p>
+                    En Hakadogs creemos firmemente que la educación canina debe basarse en el respeto absoluto hacia el animal. Rechazamos cualquier método que implique castigo, intimidación o dominancia.
+                </p>
+                <p>
+                    Nuestro enfoque se fundamenta en la comunicación clara, el refuerzo positivo y la comprensión profunda del comportamiento canino. No buscamos perros obedientes por miedo, sino compañeros que colaboran porque confían en nosotros.
+                </p>
+                <p>
+                    Cada perro tiene su propia personalidad, sus propios miedos y fortalezas. Por eso, nunca aplicamos soluciones genéricas. Estudiamos, observamos y diseñamos estrategias específicas que respetan la individualidad de cada animal.
+                </p>
+
+                <div class="philosophy-values">
+                    <div class="value">
+                        <div class="value-icon">💚</div>
+                        <div class="value-text">Respeto Absoluto</div>
+                    </div>
+                    <div class="value">
+                        <div class="value-icon">🤝</div>
+                        <div class="value-text">Comunicación Clara</div>
+                    </div>
+                    <div class="value">
+                        <div class="value-icon">🎯</div>
+                        <div class="value-text">Resultados Duraderos</div>
+                    </div>
+                    <div class="value">
+                        <div class="value-icon">📚</div>
+                        <div class="value-text">Formación Continua</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section" id="testimonios">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-overline">Testimonios</div>
+                <h2>Historias reales de transformación</h2>
+                <p>Más de 500 familias han confiado en nosotros para mejorar la relación con sus perros.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Alfredo ha transformado completamente nuestra vida con Luna. Pasamos de no poder ni salir a la calle sin estrés a disfrutar de largos paseos relajados. Su paciencia, conocimiento profundo y método respetuoso son simplemente excepcionales. Lo recomiendo sin ninguna duda."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-info">
+                            <h4>María José García</h4>
+                            <p>Propietaria de Luna (Golden Retriever)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Nuestro cachorro Max era un auténtico terremoto que no paraba ni un segundo. Gracias al programa de educación de cachorros de Hakadogs, ahora tenemos un perro equilibrado, feliz y perfectamente socializado. Las sesiones fueron educativas para toda la familia. Un cambio increíble."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CP</div>
+                        <div class="author-info">
+                            <h4>Carlos Pérez</h4>
+                            <p>Propietario de Max (Border Collie)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">
+                        "La agresividad de Rocco hacia otros perros nos tenía completamente desesperados. Alfredo trabajó con nosotros durante meses con una paciencia infinita y profesionalidad impecable. Ahora podemos socializar sin ningún problema. Estamos eternamente agradecidos por su trabajo."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AL</div>
+                        <div class="author-info">
+                            <h4>Ana López</h4>
+                            <p>Propietaria de Rocco (Pastor Alemán)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contacto">
+        <div class="cta-content">
+            <h2>¿Listo para transformar la vida de tu perro?</h2>
+            <p>
+                Contáctanos sin ningún compromiso y descubre cómo podemos ayudarte a conseguir la relación que siempre soñaste tener con tu perro. Cada día que pasa es una oportunidad perdida. BE HAKA!
+            </p>
+            <div class="cta-actions">
+                <a href="tel:+34685648241" class="btn-cta">
+                    <span>📞</span>
+                    <span>Llamar al 685 64 82 41</span>
+                </a>
+                <a href="mailto:info@hakadogs.com" class="btn-cta btn-cta-outline">
+                    <span>✉️</span>
+                    <span>Enviar Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>Hakadogs</h3>
+                    <p>
+                        Educación canina profesional en Archena, Murcia. Más de 8 años transformando la relación entre perros y sus familias a través del respeto, la comunicación clara y el refuerzo positivo.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <a href="#servicios">Educación Básica</a>
+                    <a href="#servicios">Modificación de Conductas</a>
+                    <a href="#servicios">Educación de Cachorros</a>
+                    <a href="#servicios">Clases Grupales</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Empresa</h4>
+                    <a href="#nosotros">Sobre Nosotros</a>
+                    <a href="#proceso">Nuestro Proceso</a>
+                    <a href="#testimonios">Testimonios</a>
+                    <a href="#">Blog</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <a href="tel:+34685648241">685 64 82 41</a>
+                    <a href="mailto:info@hakadogs.com">info@hakadogs.com</a>
+                    <a href="#">Archena, Murcia</a>
+                    <a href="#">Google Maps</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Hakadogs. Educación Canina Profesional • Archena, Murcia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('.nav-refined');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
