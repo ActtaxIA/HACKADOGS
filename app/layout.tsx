@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: 'Hakadogs - Educación Canina Profesional en Archena y Murcia',
   description: 'Educación canina profesional con métodos positivos y respetuosos. +8 años de experiencia, +500 perros educados. BE HAKA!',
   keywords: ['educador canino murcia', 'adiestrador perros archena', 'educación canina', 'adiestramiento positivo'],
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/images/hakadogs-01.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: '/images/hakadogs-01.png',
+  },
 }
 
 export default function RootLayout({
