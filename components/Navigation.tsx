@@ -34,13 +34,13 @@ export default function Navigation() {
                 priority
               />
             </div>
-            {/* Logo solo cara en móvil */}
-            <div className="sm:hidden relative w-12 h-12 group-hover:scale-105 transition-transform">
+            {/* Logo en móvil - hakadogs-04.png */}
+            <div className="sm:hidden relative h-10 w-32 group-hover:scale-105 transition-transform">
               <Image
-                src="/images/hakadogs_logo_cara_transparente.png"
-                alt="Hakadogs"
+                src="/images/hakadogs-04.png"
+                alt="Hakadogs - Educación Canina"
                 fill
-                className="object-contain"
+                className="object-contain object-left"
                 priority
               />
             </div>
@@ -78,18 +78,6 @@ export default function Navigation() {
       {isOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-4 space-y-3">
-            {/* Logo en menú móvil */}
-            <div className="flex justify-center pb-4 border-b border-gray-200 mb-4">
-              <Link href="/" onClick={() => setIsOpen(false)} className="relative w-32 h-12">
-                <Image
-                  src="/images/hakadogs-04.png"
-                  alt="Hakadogs - Educación Canina"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </Link>
-            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
