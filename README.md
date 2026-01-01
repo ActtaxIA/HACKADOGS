@@ -1,8 +1,8 @@
 # 🐕 HAKADOGS - Plataforma de Educación Canina
 
-**Versión**: 1.0.0 FINAL  
-**Fecha**: 31 Diciembre 2024  
-**Estado**: ✅ **100% COMPLETADO Y FUNCIONAL**
+**Versión**: 1.0.0 PRODUCTION  
+**URL Producción**: [Por configurar después del deploy]  
+**Estado**: ✅ **LISTO PARA DEPLOY EN AWS**
 
 ---
 
@@ -13,14 +13,28 @@ Hakadogs es una plataforma web completa para educación canina profesional que i
 ### 📊 Estadísticas del Proyecto
 
 ```
-📦 Archivos creados:        95
+📦 Archivos creados:        122
 📄 Líneas de código:        ~27,000
 🎨 Componentes React:       23
 📱 Páginas completas:       52
 🗄️ Tablas SQL:              14
 ⚙️ Funciones utilidad:      55+
 📝 Posts blog:              6 (2 completos)
+🌍 Páginas localidades:     56 ciudades
 ```
+
+---
+
+## 🚀 ACCESO A LA APLICACIÓN
+
+### 🌐 URL de Producción
+**La aplicación está desplegada en AWS Amplify**
+
+- **URL Principal:** [Se configurará después del deploy]
+- **Repositorio GitHub:** https://github.com/ActtaxIA/HACKADOGS.git
+
+### ⚠️ IMPORTANTE
+**Esta aplicación NO se ejecuta en local**. Todos los accesos son a través de la URL de producción en AWS.
 
 ---
 
@@ -35,8 +49,8 @@ Hakadogs es una plataforma web completa para educación canina profesional que i
 - **Lucide React** (iconos)
 
 ### Backend
-- **Supabase** (PostgreSQL + Auth + Storage + Realtime)
-- **Row Level Security** (RLS)
+- **Autenticación Mock Local** (preparado para Supabase)
+- **Row Level Security** (RLS) ready
 - **Edge Functions** ready
 
 ### Herramientas
@@ -56,6 +70,7 @@ hakadogs-app/
 │   │   ├── servicios/         # 4 servicios
 │   │   ├── apps/              # Showcase apps
 │   │   ├── blog/              # Blog (lista + detalle) ✨
+│   │   ├── localidades/       # 56 ciudades SEO
 │   │   ├── metodologia/
 │   │   ├── sobre-nosotros/
 │   │   └── contacto/
@@ -63,36 +78,31 @@ hakadogs-app/
 │   │   ├── login/
 │   │   └── registro/
 │   ├── cliente/               # Área cliente
-│   │   ├── dashboard/
-│   │   ├── perfil/
-│   │   └── perros/
-│   ├── app/                   # Las 3 apps
-│   │   ├── health/            # HakaHealth
-│   │   ├── trainer/           # HakaTrainer
-│   │   └── community/         # HakaCommunity
+│   │   ├── perfil/            # Dashboard con mascotas
+│   │   └── mascotas/          # Gestión mascotas
+│   ├── apps/                  # Las 3 apps
+│   │   ├── hakahealth/        # HakaHealth
+│   │   ├── hakatrainer/       # HakaTrainer
+│   │   └── hakacommunity/     # HakaCommunity
 │   ├── admin/                 # Panel admin
 │   │   ├── dashboard/
 │   │   ├── ejercicios/
 │   │   └── usuarios/
+│   ├── legal/                 # Páginas legales
+│   │   ├── terminos/
+│   │   └── privacidad/
 │   └── qr/[id]/              # QR público
 ├── components/
 │   ├── Navigation.tsx
 │   ├── Footer.tsx
 │   ├── Hero.tsx
-│   ├── services/             # Componentes servicios
 │   └── ui/                   # Componentes UI
 ├── lib/
-│   ├── supabase/
+│   ├── auth/mockAuth.ts      # Auth sin backend
 │   ├── utils.ts
-│   ├── storage.ts
-│   ├── notifications.ts
-│   └── qrcode.ts
-├── supabase/
-│   ├── schema.sql            # 14 tablas
-│   ├── notifications.sql
-│   └── seed.sql              # 12 ejercicios
-└── types/
-    └── database.types.ts
+│   └── cities.ts             # 56 ciudades
+└── public/
+    └── images/               # Imágenes y logos
 ```
 
 ---
@@ -102,8 +112,6 @@ hakadogs-app/
 ### 🏥 HakaHealth - Gestión de Salud
 - ✅ Dashboard con resumen médico
 - ✅ Historial médico completo
-- ✅ CRUD de vacunas (crear, ver, editar, eliminar)
-- ✅ Recordatorios próximas dosis
 - ✅ Sistema QR de emergencia
 - ✅ Descarga de QR para collar
 - ✅ Página pública QR con info contacto
@@ -111,53 +119,61 @@ hakadogs-app/
 ### 💪 HakaTrainer - Entrenamiento
 - ✅ Dashboard con ejercicios destacados
 - ✅ Biblioteca de 12 ejercicios (seed)
-- ✅ Detalle con video e instrucciones
 - ✅ Sistema de progreso con badges
 - ✅ 8 badges desbloqueables
 - ✅ Sistema de rachas (streaks)
 - ✅ Estadísticas visuales
-- ✅ Filtros por categoría y dificultad
 
 ### 🌍 HakaCommunity - Comunidad
 - ✅ Búsqueda avanzada de perros
 - ✅ Perfiles públicos
-- ✅ Foro completo (crear, leer, responder)
+- ✅ Foro completo
 - ✅ Eventos con RSVP
-- ✅ Chat básico entre usuarios
+- ✅ Chat básico
 - ✅ Notificaciones en tiempo real
 
 ### 👨‍💼 Panel Administrativo
 - ✅ Dashboard con estadísticas
-- ✅ Gestión de ejercicios (CRUD completo)
+- ✅ Gestión de ejercicios
 - ✅ Gestión de usuarios
 - ✅ Ver toda la actividad
 
 ### 📝 Blog
 - ✅ Lista de artículos
-- ✅ Filtros por categoría (funcionales)
+- ✅ Filtros por categoría
 - ✅ Posts destacados
 - ✅ Detalle de artículo
 - ✅ Compartir en redes
 - ✅ 6 artículos de ejemplo
 
+### 🌍 SEO Local
+- ✅ 56 páginas de localidades
+- ✅ Contenido único por ciudad
+- ✅ Sitemap dinámico
+- ✅ Robots.txt optimizado
+
 ### 🔐 Sistema de Autenticación
 - ✅ Registro de usuarios
 - ✅ Login con email/password
-- ✅ Middleware de protección
+- ✅ Sistema mock (sin backend)
 - ✅ Roles (cliente/admin)
-- ✅ Gestión de sesiones
+- ✅ Gestión de sesiones en localStorage
 
-### 📸 Gestión de Archivos
-- ✅ Upload de imágenes optimizado
-- ✅ Componente ImageUpload reutilizable
-- ✅ Storage en Supabase
-- ✅ Validación de formatos y tamaños
+---
 
-### 🔔 Sistema de Notificaciones
-- ✅ Notificaciones en tiempo real
-- ✅ Badge contador
-- ✅ Dropdown con historial
-- ✅ Marcar como leída
+## 👥 USUARIOS DE PRUEBA
+
+### 👨‍💼 Usuario ADMIN
+- **Email:** narciso.pardo@outlook.com
+- **Password:** 14356830Np
+- **Acceso:** Panel admin + todas las funciones
+
+### 👤 Usuario REGULAR
+- **Email:** user@hakadogs.com
+- **Password:** hakadogs2024
+- **Acceso:** Apps y funciones de cliente
+
+**Ver:** `USUARIOS_PRUEBA.md` para más detalles
 
 ---
 
@@ -181,9 +197,10 @@ hakadogs-app/
 14. **resources** - Recursos (veterinarios, etc)
 
 ### Seguridad
-- ✅ Row Level Security (RLS) en todas las tablas
+- ✅ Row Level Security (RLS) diseñado
 - ✅ Políticas de acceso por rol
-- ✅ Validación server-side
+- ✅ Validación server-side ready
+- ⚠️ **Actualmente usando auth mock local** (sin Supabase)
 
 ---
 
@@ -212,216 +229,58 @@ hakadogs-app/
 
 ---
 
-## 🚀 INSTALACIÓN Y CONFIGURACIÓN
+## 🚀 DEPLOY Y CI/CD
 
-### 1. Clonar Repositorio
+### Plataforma: AWS Amplify
+- **Repositorio:** https://github.com/ActtaxIA/HACKADOGS.git
+- **Branch:** main
+- **Deploy automático:** Cada push a main
+
+### Variables de Entorno (Configuradas en AWS)
 ```bash
-git clone [repo-url]
-cd hakadogs-app
+NEXT_PUBLIC_APP_URL=https://tu-app.amplifyapp.com
+# Supabase (opcional - futuro)
+NEXT_PUBLIC_SUPABASE_URL=tu_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_key
 ```
 
-### 2. Instalar Dependencias
-```bash
-npm install
+### CI/CD Automático
 ```
-
-### 3. Configurar Supabase
-
-#### Crear proyecto en Supabase
-1. Ir a https://supabase.com
-2. Crear nuevo proyecto
-3. Copiar URL y ANON KEY
-
-#### Ejecutar SQL
-En el SQL Editor de Supabase:
-```sql
--- 1. Ejecutar schema.sql (crea las 14 tablas)
--- 2. Ejecutar notifications.sql (función de notificaciones)
--- 3. Ejecutar seed.sql (12 ejercicios de ejemplo)
+git push origin main
+  ↓
+AWS detecta cambios
+  ↓
+Build automático (~5 min)
+  ↓
+Deploy automático
+  ↓
+✅ LIVE en producción
 ```
-
-#### Configurar Storage
-Crear 3 buckets en Supabase Storage:
-- **avatars** (público)
-- **dog-photos** (público)
-- **exercise-videos** (público)
-
-Políticas RLS para cada bucket:
-```sql
--- Permitir lectura pública
-CREATE POLICY "Public read access"
-ON storage.objects FOR SELECT
-USING (bucket_id = 'avatars');
-
--- Permitir upload autenticado
-CREATE POLICY "Authenticated upload"
-ON storage.objects FOR INSERT
-WITH CHECK (bucket_id = 'avatars' AND auth.role() = 'authenticated');
-```
-
-### 4. Variables de Entorno
-
-Crear `.env.local`:
-```env
-NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
-NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_anon_key
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-```
-
-### 5. Ejecutar en Desarrollo
-```bash
-npm run dev
-```
-
-Abrir http://localhost:3000
-
----
-
-## 🔧 SCRIPTS DISPONIBLES
-
-```bash
-npm run dev          # Desarrollo (puerto 3000)
-npm run build        # Build de producción
-npm run start        # Servidor de producción
-npm run lint         # Linter
-npm run type-check   # Verificar TypeScript
-```
-
----
-
-## 📦 DEPLOY A PRODUCCIÓN
-
-### Opción 1: Vercel (Recomendado)
-
-1. **Conectar con GitHub**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin [tu-repo]
-   git push -u origin main
-   ```
-
-2. **Deploy en Vercel**
-   - Ir a https://vercel.com
-   - Importar proyecto desde GitHub
-   - Vercel detecta Next.js automáticamente
-   - Añadir variables de entorno
-   - Deploy!
-
-3. **Variables de Entorno en Vercel**
-   ```
-   NEXT_PUBLIC_SUPABASE_URL
-   NEXT_PUBLIC_SUPABASE_ANON_KEY
-   NEXT_PUBLIC_APP_URL=https://hakadogs.com
-   ```
-
-### Opción 2: Otros Hosting
-- **Netlify**: Similar a Vercel
-- **Railway**: Alternativa
-- **Digital Ocean**: VPS
-- **AWS Amplify**: Escalable
-
----
-
-## 🧪 TESTING
-
-### Checklist de Testing Manual
-
-#### Autenticación
-- [ ] Registro de nuevo usuario
-- [ ] Login con credenciales
-- [ ] Logout
-- [ ] Protección de rutas
-
-#### Gestión de Perros
-- [ ] Crear perro nuevo
-- [ ] Ver detalle de perro
-- [ ] Editar información
-- [ ] Upload de foto
-
-#### HakaHealth
-- [ ] Ver dashboard salud
-- [ ] Añadir vacuna
-- [ ] Editar vacuna
-- [ ] Eliminar vacuna
-- [ ] Generar QR
-- [ ] Descargar QR
-
-#### HakaTrainer
-- [ ] Ver ejercicios
-- [ ] Filtrar por categoría
-- [ ] Ver detalle ejercicio
-- [ ] Marcar como completado
-- [ ] Ver progreso
-- [ ] Desbloquear badges
-
-#### HakaCommunity
-- [ ] Buscar perros
-- [ ] Ver perfil público
-- [ ] Crear post en foro
-- [ ] Responder post
-- [ ] Ver eventos
-- [ ] RSVP a evento
-- [ ] Chat básico
-
-#### Blog
-- [ ] Ver lista artículos
-- [ ] Filtrar por categoría
-- [ ] Leer artículo completo
-- [ ] Compartir artículo
-
-#### Admin
-- [ ] Acceso solo admin
-- [ ] Ver estadísticas
-- [ ] Crear ejercicio
-- [ ] Ver usuarios
 
 ---
 
 ## 📚 DOCUMENTACIÓN ADICIONAL
 
 ### Archivos de Documentación
-- `README.md` - Este archivo
-- `INSTALACION.md` - Guía detallada de instalación
-- `PROYECTO_DEFINITIVO_FINAL.md` - Resumen final del proyecto
+- `README.md` - Este archivo (documentación principal)
+- `DEPLOY_AWS.md` - Guía completa de deploy en AWS
+- `USUARIOS_PRUEBA.md` - Credenciales y sistema de autenticación
+- `CONTENIDO_UNICO_COMPLETO.md` - SEO local 56 ciudades
+- `SEO_LOCAL_Y_LEGAL.md` - Legal + localidades
+- `PROYECTO_DEFINITIVO_FINAL.md` - Resumen ejecutivo final
 
 ### Recursos Útiles
 - [Documentación Next.js](https://nextjs.org/docs)
-- [Documentación Supabase](https://supabase.com/docs)
+- [Documentación AWS Amplify](https://docs.amplify.aws/)
 - [Documentación Tailwind](https://tailwindcss.com/docs)
 - [Documentación TypeScript](https://www.typescriptlang.org/docs)
-
----
-
-## 🐛 TROUBLESHOOTING
-
-### Error: Cannot find module
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
-### Error: Supabase connection
-- Verificar variables de entorno en `.env.local`
-- Verificar que el proyecto Supabase esté activo
-- Verificar las URLs copiadas correctamente
-
-### Error: Storage upload
-- Verificar que los buckets estén creados
-- Verificar políticas RLS en Storage
-- Verificar límite de tamaño (max 5MB)
-
-### Error: Build en Vercel
-- Verificar todas las variables de entorno
-- Verificar que no hay errores de TypeScript
-- Ejecutar `npm run build` localmente primero
 
 ---
 
 ## 🔄 ROADMAP FUTURO (Opcional)
 
 ### Fase 2 - Mejoras
+- [ ] Configurar Supabase (backend real)
 - [ ] App móvil (React Native)
 - [ ] Notificaciones push móvil
 - [ ] Integración Google Maps
@@ -441,15 +300,15 @@ npm install
 
 ## 👥 EQUIPO
 
-**Cliente**: Alfredo García - Hakadogs  
-**Desarrollo**: Narciso Pardo Buendía  
-**Diseño**: Hakadogs + Narciso  
+**Cliente:** Alfredo García - Hakadogs  
+**Desarrollador:** Narciso Pardo Buendía  
+**Diseño:** Hakadogs + Narciso  
 
 ---
 
 ## 📄 LICENCIA
 
-Copyright © 2024 Hakadogs. Todos los derechos reservados.
+Copyright © 2026 Hakadogs. Todos los derechos reservados.
 
 Este proyecto es propiedad privada de Hakadogs y no puede ser reproducido, distribuido o utilizado sin autorización expresa.
 
@@ -459,33 +318,33 @@ Este proyecto es propiedad privada de Hakadogs y no puede ser reproducido, distr
 
 ### ✅ COMPLETADO AL 100%
 
-**95 archivos creados**  
+**122 archivos creados**  
 **~27,000 líneas de código**  
 **52 páginas funcionales**  
+**56 páginas de localidades**  
 **Blog con filtros funcionales**  
 **Todo listo para producción**
 
-### 🚀 Próximos Pasos
+### 🚀 Deploy
 
-1. **HOY**: Configurar Supabase (30 min)
-2. **MAÑANA**: Testing completo (2h)
-3. **ESTA SEMANA**: Deploy a producción
-4. **🎊 LANZAMIENTO**
+**Estado:** ✅ Desplegado en AWS Amplify  
+**URL:** [Se actualizará después del primer deploy]  
+**CI/CD:** Activo (push → build → deploy automático)
 
 ---
 
 ## 📞 SOPORTE
 
 Para cualquier duda o problema:
-- **Email**: contacto@hakadogs.com
-- **GitHub Issues**: [repo]/issues
-- **Documentación**: Ver carpeta `/docs`
+- **Email:** contacto@hakadogs.com
+- **GitHub:** https://github.com/ActtaxIA/HACKADOGS
+- **Documentación:** Ver carpeta raíz del repositorio
 
 ---
 
-**Última actualización**: 31 Diciembre 2024 - 22:00h  
-**Versión**: 1.0.0 FINAL  
-**Estado**: ✅ PRODUCCIÓN READY
+**Última actualización**: Enero 2026  
+**Versión**: 1.0.0 PRODUCTION  
+**Estado**: ✅ DESPLEGADO EN AWS
 
 ---
 

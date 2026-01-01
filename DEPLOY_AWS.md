@@ -6,6 +6,8 @@
 **Plataforma:** AWS Amplify + GitHub  
 **Framework:** Next.js 14
 
+**⚠️ IMPORTANTE:** Esta es la **ÚNICA forma de ejecutar Hakadogs**. No hay entorno local, todo se ejecuta en producción desde AWS.
+
 ---
 
 ## ✅ PREREQUISITOS

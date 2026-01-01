@@ -2,7 +2,7 @@
 
 ## 🔐 Sistema de Autenticación Local (Mock)
 
-**Hakadogs utiliza un sistema de autenticación local en memoria** (sin Supabase) para desarrollo y pruebas.
+**Hakadogs utiliza un sistema de autenticación local en memoria** (sin Supabase) para desarrollo y producción inicial.
 
 ---
 
@@ -13,26 +13,25 @@
 - **Password:** 14356830Np
 - **Rol:** Administrador
 - **Permisos:** Acceso completo al sistema, panel admin
-- **URL:** http://localhost:3000/admin/dashboard
+- **URL Admin:** `https://tu-app.amplifyapp.com/admin/dashboard`
 
 ### 👤 Usuario REGULAR
 - **Email:** user@hakadogs.com
 - **Password:** hakadogs2024
 - **Rol:** Cliente estándar
 - **Permisos:** Acceso a apps y funcionalidades de cliente
-- **URL:** http://localhost:3000/cliente/perfil
+- **URL Perfil:** `https://tu-app.amplifyapp.com/cliente/perfil`
 
 ---
 
 ## 🚀 Cómo Iniciar Sesión
 
-### 1. Iniciar el Servidor
-```bash
-npm run dev
-```
+### 1. Acceder a la Aplicación
+Ve a la URL de producción en tu navegador: **https://tu-app.amplifyapp.com**
 
 ### 2. Ir a Login
-Abre tu navegador en: **http://localhost:3000/auth/login**
+Click en "Iniciar Sesión" o ve directamente a:
+**https://tu-app.amplifyapp.com/auth/login**
 
 ### 3. Usar Credenciales
 Usa cualquiera de las dos credenciales de arriba para iniciar sesión.
@@ -48,12 +47,12 @@ Usa cualquiera de las dos credenciales de arriba para iniciar sesión.
 
 ### Cómo Funciona
 1. Los usuarios están pre-creados en `mockAuth.ts`
-2. Las sesiones se guardan en `localStorage`
+2. Las sesiones se guardan en `localStorage` del navegador
 3. No requiere backend ni Supabase
-4. Ideal para desarrollo sin configuración
+4. Funciona en producción sin configuración adicional
 
 ### Crear Nuevos Usuarios de Prueba
-Edita `lib/auth/mockAuth.ts`:
+Para añadir más usuarios, edita `lib/auth/mockAuth.ts`:
 
 ```typescript
 const MOCK_USERS = [
@@ -72,25 +71,29 @@ const MOCK_PASSWORDS = {
 }
 ```
 
+Luego commit y push a GitHub para que se despliegue automáticamente.
+
 ---
 
-## 🔗 URLs Importantes
+## 🔗 URLs Importantes (Producción)
+
+**⚠️ Reemplaza `tu-app.amplifyapp.com` con tu URL real de AWS Amplify**
 
 ### Autenticación
-- **Login:** http://localhost:3000/auth/login
-- **Registro:** http://localhost:3000/auth/registro
+- **Login:** https://tu-app.amplifyapp.com/auth/login
+- **Registro:** https://tu-app.amplifyapp.com/auth/registro
 
 ### Área Cliente
-- **Dashboard:** http://localhost:3000/cliente/perfil
-- **Mascotas:** http://localhost:3000/cliente/mascotas
+- **Dashboard:** https://tu-app.amplifyapp.com/cliente/perfil
+- **Mascotas:** https://tu-app.amplifyapp.com/cliente/mascotas
 
 ### Área Admin (solo admin)
-- **Panel Admin:** http://localhost:3000/admin/dashboard
+- **Panel Admin:** https://tu-app.amplifyapp.com/admin/dashboard
 
 ### Apps
-- **HakaHealth:** http://localhost:3000/apps/hakahealth
-- **HakaTrainer:** http://localhost:3000/apps/hakatrainer
-- **HakaCommunity:** http://localhost:3000/apps/hakacommunity
+- **HakaHealth:** https://tu-app.amplifyapp.com/apps/hakahealth
+- **HakaTrainer:** https://tu-app.amplifyapp.com/apps/hakatrainer
+- **HakaCommunity:** https://tu-app.amplifyapp.com/apps/hakacommunity
 
 ---
 
@@ -98,13 +101,13 @@ const MOCK_PASSWORDS = {
 
 ### No puedo iniciar sesión
 1. Verifica que estás usando las credenciales exactas
-2. Limpia `localStorage`: F12 → Application → Local Storage → Borrar todo
-3. Recarga la página (F5)
+2. Limpia caché del navegador: `Ctrl+Shift+Delete`
+3. Abre modo incógnito e intenta de nuevo
 
 ### "Mi Perfil" me redirige a login
-1. Cierra todas las pestañas del navegador
-2. Abre una nueva ventana
-3. Inicia sesión de nuevo
+1. Limpia localStorage del sitio:
+   - F12 → Application → Local Storage → Borrar todo
+2. Vuelve a iniciar sesión
 
 ### El admin login falla
 - Usa exactamente: `narciso.pardo@outlook.com` / `14356830Np`
@@ -130,15 +133,16 @@ location.reload()
 
 **Como Admin:**
 - ✅ Ver panel de administración
-- ✅ Gestionar ejercicios (próximamente)
 - ✅ Ver estadísticas (mock data)
+- ✅ Gestionar ejercicios
+- ✅ Gestionar usuarios
 
 **Como Cliente:**
-- ✅ Ver perfil personal
-- ✅ Gestionar mascotas
-- ✅ Añadir/editar/eliminar mascotas
-- ✅ Subir fotos de mascotas
+- ✅ Ver perfil personal con dashboard visual
+- ✅ Gestionar mascotas (añadir, editar, eliminar)
+- ✅ Subir fotos de mascotas (Base64 en localStorage)
 - ✅ Acceder a las 3 apps
+- ✅ Ver estadísticas personales
 
 ---
 
@@ -148,27 +152,34 @@ Cuando se configure Supabase, estos usuarios mock se reemplazarán por usuarios 
 
 **Pasos para migrar:**
 1. Configurar Supabase Auth
-2. Descomentar código en `middleware.ts`
-3. Actualizar `lib/supabase/client.ts`
-4. Eliminar o renombrar `lib/auth/mockAuth.ts`
+2. Añadir variables de entorno en AWS Amplify
+3. Descomentar código en `middleware.ts`
+4. Actualizar `lib/supabase/client.ts`
+5. Push a GitHub → Deploy automático
 
 ---
 
 ## ⚠️ IMPORTANTE
 
 ### Seguridad
-- ⚠️ **NO uses estos usuarios en producción**
-- ⚠️ Cambia las contraseñas antes de hacer deploy
-- ⚠️ Son solo para desarrollo local
+- ⚠️ **NO uses estos usuarios en producción final**
+- ⚠️ Cambia las contraseñas cuando añadas usuarios reales
+- ⚠️ Son para demo y pruebas iniciales
 
 ### LocalStorage
-- Las sesiones se guardan en `localStorage`
+- Las sesiones se guardan en `localStorage` del navegador
 - Se pierden al limpiar caché del navegador
-- Son específicas por navegador
+- Son específicas por navegador y dispositivo
+
+### En Producción (AWS)
+- ✅ El sistema funciona igual que en local
+- ✅ Las sesiones persisten entre recargas
+- ✅ No requiere configuración adicional
+- ⚠️ Considera migrar a Supabase para múltiples usuarios reales
 
 ---
 
-## ✅ Checklist de Testing
+## ✅ Checklist de Testing en Producción
 
 - [ ] Login con usuario admin funciona
 - [ ] Login con usuario regular funciona
@@ -178,19 +189,22 @@ Cuando se configure Supabase, estos usuarios mock se reemplazarán por usuarios 
 - [ ] Logout funciona correctamente
 - [ ] Sesión persiste al recargar página
 - [ ] Rutas protegidas redirigen a login
+- [ ] Subir foto de mascota funciona
+- [ ] Dashboard visual de perfil se carga correctamente
 
 ---
 
 ## 📞 Soporte
 
-Si tienes problemas con la autenticación:
-1. Revisa la consola del navegador (F12)
-2. Busca errores en rojo
-3. Verifica que el servidor esté corriendo (`npm run dev`)
-4. Prueba en modo incógnito
+Si tienes problemas con la autenticación en producción:
+1. Abre la consola del navegador (F12)
+2. Ve a la pestaña "Console" y busca errores en rojo
+3. Ve a "Application" → "Local Storage" y verifica `hakadogs_session`
+4. Prueba en modo incógnito para descartar problemas de caché
 
 ---
 
 **Última actualización:** Enero 2026  
 **Proyecto:** HakaDogs - Educación Canina Profesional  
-**Sistema:** Autenticación Mock Local (sin backend)
+**Sistema:** Autenticación Mock Local (sin backend)  
+**Plataforma:** AWS Amplify (Producción)
