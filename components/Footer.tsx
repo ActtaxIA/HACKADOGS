@@ -57,6 +57,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/cursos" className="text-gray-300 hover:text-gold transition">
+                  Cursos
+                </Link>
+              </li>
+              <li>
                 <Link href="/contacto" className="text-gray-300 hover:text-gold transition">
                   Contacto
                 </Link>
@@ -69,19 +74,16 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">Nuestras Apps</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/apps/hakahealth" className="text-gray-300 hover:text-gold transition">
-                  HakaHealth
-                </Link>
+                <span className="text-gray-400">HakaHealth</span>
+                <span className="text-gray-500 text-xs ml-2">🚧 Próximamente</span>
               </li>
               <li>
-                <Link href="/apps/hakatrainer" className="text-gray-300 hover:text-gold transition">
-                  HakaTrainer
-                </Link>
+                <span className="text-gray-400">HakaTrainer</span>
+                <span className="text-gray-500 text-xs ml-2">🚧 Próximamente</span>
               </li>
               <li>
-                <Link href="/apps/hakacommunity" className="text-gray-300 hover:text-gold transition">
-                  HakaCommunity
-                </Link>
+                <span className="text-gray-400">HakaCommunity</span>
+                <span className="text-gray-500 text-xs ml-2">🚧 Próximamente</span>
               </li>
             </ul>
 

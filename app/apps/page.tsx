@@ -22,7 +22,6 @@ export default function AppsPage() {
         'Evolución del peso',
         'Citas veterinarias organizadas',
       ],
-      href: '/apps/hakahealth',
       gradient: 'from-green-500 to-green-600',
       bgGradient: 'from-green-50 to-white',
     },
@@ -40,7 +39,6 @@ export default function AppsPage() {
         'Progreso visual por habilidad',
         'Comunicación directa con el educador',
       ],
-      href: '/apps/hakatrainer',
       gradient: 'from-orange-500 to-orange-600',
       bgGradient: 'from-orange-50 to-white',
     },
@@ -58,7 +56,6 @@ export default function AppsPage() {
         'Mapa de recursos (parques, veterinarios, tiendas)',
         'Chat y mensajería',
       ],
-      href: '/apps/hakacommunity',
       gradient: 'from-blue-500 to-blue-600',
       bgGradient: 'from-blue-50 to-white',
     },
@@ -79,7 +76,7 @@ export default function AppsPage() {
             Herramientas digitales para mejorar la vida de tu perro
           </p>
           <p className="text-lg max-w-2xl mx-auto opacity-90">
-            Acceso exclusivo para clientes de Hakadogs. Gestiona salud, adiestramiento y socialización desde un solo lugar.
+            Próximamente: nuestras apps estarán disponibles en dominios únicos. Estamos trabajando en ellas.
           </p>
         </div>
       </section>
@@ -95,7 +92,7 @@ export default function AppsPage() {
               return (
                 <div
                   key={app.id}
-                  className={`bg-gradient-to-br ${app.bgGradient} rounded-2xl shadow-xl overflow-hidden`}
+                  className={`bg-gradient-to-br ${app.bgGradient} rounded-2xl shadow-xl overflow-hidden opacity-75`}
                 >
                   <div className={`grid md:grid-cols-2 gap-8 items-center ${isReversed ? 'md:grid-flow-dense' : ''}`}>
                     {/* Content */}
@@ -126,13 +123,10 @@ export default function AppsPage() {
                         ))}
                       </div>
 
-                      {/* CTA Button */}
-                      <Link href={app.href}>
-                        <button className={`group w-full bg-gradient-to-r ${app.gradient} text-white font-semibold py-4 px-8 rounded-xl hover:shadow-xl transition-all flex items-center justify-center whitespace-nowrap`}>
-                          <span>Acceder a {app.name}</span>
-                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-                        </button>
-                      </Link>
+                      {/* Próximamente Badge */}
+                      <div className={`w-full bg-gradient-to-r ${app.gradient} text-white font-semibold py-4 px-8 rounded-xl flex items-center justify-center whitespace-nowrap`}>
+                        <span>🚧 Próximamente - Por desarrollar</span>
+                      </div>
                     </div>
 
                     {/* Visual/Image */}
@@ -153,74 +147,21 @@ export default function AppsPage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Info Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              ¿Por qué usar nuestras apps?
+              Apps en Desarrollo
             </h2>
-            <p className="text-xl text-gray-600 mb-12">
-              Diseñadas específicamente para clientes de Hakadogs
+            <p className="text-xl text-gray-600 mb-8">
+              Estamos trabajando en crear aplicaciones independientes en dominios únicos. Cada app tendrá su propia plataforma especializada.
             </p>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-6 h-6 text-green-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Todo en un Lugar</h3>
-                <p className="text-gray-600">
-                  Salud, adiestramiento y comunidad sincronizados con tu plan de educación canina
-                </p>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-6 h-6 text-orange-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Seguimiento Real</h3>
-                <p className="text-gray-600">
-                  Tu educador actualiza directamente tu plan y puede ver tu progreso
-                </p>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-6 h-6 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Comunidad Activa</h3>
-                <p className="text-gray-600">
-                  Conecta con otros clientes que están en tu misma etapa de adiestramiento
-                </p>
-              </div>
+            <div className="bg-white rounded-xl p-8 shadow-md max-w-2xl mx-auto">
+              <p className="text-gray-700 text-lg">
+                Mientras tanto, puedes explorar nuestros <Link href="/servicios" className="text-forest font-semibold hover:text-forest-dark">servicios de educación canina</Link> y nuestros <Link href="/cursos" className="text-forest font-semibold hover:text-forest-dark">cursos online</Link>.
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            ¿Aún no eres cliente?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">
-            Estas apps están disponibles exclusivamente para clientes de Hakadogs. Comienza tu plan de educación canina hoy.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contacto"
-              className="inline-block bg-white text-orange-600 font-semibold px-8 py-4 rounded-full hover:bg-orange-50 transition-colors shadow-lg"
-            >
-              Solicitar Información
-            </Link>
-            <Link
-              href="/servicios"
-              className="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
-            >
-              Ver Servicios
-            </Link>
           </div>
         </div>
       </section>

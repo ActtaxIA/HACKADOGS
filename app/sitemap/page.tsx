@@ -114,18 +114,35 @@ export default function SitemapPage() {
             </div>
             <ul className="space-y-3">
               <li>
-                <Link href="/apps#hakahealth" className="text-gray-700 hover:text-forest transition flex items-center">
-                  <span className="mr-2">→</span> HakaHealth
-                </Link>
+                <span className="text-gray-700 flex items-center">
+                  <span className="mr-2">→</span> HakaHealth <span className="text-gray-400 text-sm ml-2">🚧 Próximamente</span>
+                </span>
               </li>
               <li>
-                <Link href="/apps#hakatrainer" className="text-gray-700 hover:text-forest transition flex items-center">
-                  <span className="mr-2">→</span> HakaTrainer
-                </Link>
+                <span className="text-gray-700 flex items-center">
+                  <span className="mr-2">→</span> HakaTrainer <span className="text-gray-400 text-sm ml-2">🚧 Próximamente</span>
+                </span>
               </li>
               <li>
-                <Link href="/apps#hakacommunity" className="text-gray-700 hover:text-forest transition flex items-center">
-                  <span className="mr-2">→</span> HakaCommunity
+                <span className="text-gray-700 flex items-center">
+                  <span className="mr-2">→</span> HakaCommunity <span className="text-gray-400 text-sm ml-2">🚧 Próximamente</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Cursos */}
+          <div className="bg-white rounded-xl p-6 shadow-lg">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
+                <BookOpen size={24} className="text-gold" />
+              </div>
+              <h2 className="text-2xl font-bold text-forest-dark">Cursos</h2>
+            </div>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/cursos" className="text-gray-700 hover:text-forest transition flex items-center">
+                  <span className="mr-2">→</span> Cursos de Educación Canina
                 </Link>
               </li>
             </ul>
@@ -158,32 +175,6 @@ export default function SitemapPage() {
             </ul>
           </div>
 
-          {/* Autenticación */}
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                <Users size={24} className="text-orange-600" />
-              </div>
-              <h2 className="text-2xl font-bold text-forest-dark">Usuario</h2>
-            </div>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/auth/login" className="text-gray-700 hover:text-forest transition flex items-center">
-                  <span className="mr-2">→</span> Iniciar Sesión
-                </Link>
-              </li>
-              <li>
-                <Link href="/auth/registro" className="text-gray-700 hover:text-forest transition flex items-center">
-                  <span className="mr-2">→</span> Registrarse
-                </Link>
-              </li>
-              <li>
-                <Link href="/cliente/dashboard" className="text-gray-700 hover:text-forest transition flex items-center">
-                  <span className="mr-2">→</span> Panel de Cliente
-                </Link>
-              </li>
-            </ul>
-          </div>
 
           {/* Legal */}
           <div className="bg-white rounded-xl p-6 shadow-lg">

@@ -103,11 +103,11 @@ export default function AppsSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center"
         >
-          <Link href="/apps" className="inline-block bg-gold text-forest-dark px-8 py-4 rounded-xl font-bold hover:bg-gold/90 transition-all hover:scale-105">
-            Descubre las Apps
-          </Link>
+          <div className="inline-block bg-gold/50 text-forest-dark px-8 py-4 rounded-xl font-bold cursor-not-allowed opacity-75">
+            🚧 Próximamente - Por desarrollar
+          </div>
           <p className="mt-4 text-sm text-gray-400">
-            Acceso gratuito para todos nuestros clientes
+            Las apps estarán disponibles en dominios únicos próximamente
           </p>
         </motion.div>
       </div>

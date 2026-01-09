@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
-import UserMenu from '@/components/ui/UserMenu'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,6 +11,7 @@ export default function Navigation() {
   const navLinks = [
     { href: '/servicios', label: 'Servicios' },
     { href: '/apps', label: 'Apps' },
+    { href: '/cursos', label: 'Cursos' },
     { href: '/metodologia', label: 'Metodología' },
     { href: '/blog', label: 'Blog' },
     { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
@@ -59,11 +59,6 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* User Menu / Auth Buttons */}
-          <div className="hidden lg:block">
-            <UserMenu />
-          </div>
-
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -88,9 +83,6 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-4 border-t border-gray-200">
-              <UserMenu />
-            </div>
           </div>
         </div>
       )}
