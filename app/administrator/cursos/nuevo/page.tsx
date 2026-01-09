@@ -80,17 +80,75 @@ export default function NuevoCursoPage() {
 
     setSaving(true)
 
-    const courseData = {
-      ...formData,
-      lessons,
-      totalLessons: lessons.length,
-      totalDuration: lessons.reduce((sum, lesson) => sum + lesson.duration, 0)
-    }
+    try {
+      // 1. Crear el curso
+      const { createCourse, bulkCreateLessons, bulkCreateResources } = await import('@/lib/supabase/courses')
+      
+      const courseData = {
+        title: formData.title,
+        slug: formData.slug,
+        short_description: formData.shortDescription,
+        description: formData.description,
+        icon: formData.icon,
+        price: parseFloat(formData.price),
+        difficulty: formData.difficulty as 'basico' | 'intermedio' | 'avanzado',
+        what_you_learn: formData.whatYouLearn.filter(item => item.trim() !== ''),
+        is_free: formData.isFree,
+        is_published: formData.isPublished,
+        thumbnail_url: formData.thumbnailUrl || null,
+      }
 
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    console.log('Curso guardado:', courseData)
-    router.push('/administrator')
+      const newCourse = await createCourse(courseData)
+
+      // 2. Crear todas las lecciones
+      const lessonsData = lessons.map((lesson, index) => ({
+        course_id: newCourse.id,
+        title: lesson.title,
+        slug: lesson.title
+          .toLowerCase()
+          .replace(/[áàäâ]/g, 'a')
+          .replace(/[éèëê]/g, 'e')
+          .replace(/[íìïî]/g, 'i')
+          .replace(/[óòöô]/g, 'o')
+          .replace(/[úùüû]/g, 'u')
+          .replace(/ñ/g, 'n')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, ''),
+        content: lesson.content,
+        order_index: index,
+        duration_minutes: lesson.duration,
+        video_url: lesson.videoUrl || null,
+        video_provider: lesson.videoUrl ? (lesson.videoProvider as any) : null,
+        is_free_preview: lesson.isFreePreview,
+      }))
+
+      const createdLessons = await bulkCreateLessons(lessonsData)
+
+      // 3. Crear todos los recursos
+      const allResources = lessons.flatMap((lesson, lessonIndex) => 
+        lesson.resources.map((resource, resourceIndex) => ({
+          lesson_id: createdLessons[lessonIndex].id,
+          title: resource.title,
+          description: null,
+          file_type: resource.fileType,
+          file_url: resource.fileUrl,
+          file_size: resource.fileSize || null,
+          order_index: resourceIndex,
+        }))
+      )
+
+      if (allResources.length > 0) {
+        await bulkCreateResources(allResources)
+      }
+
+      alert('✅ Curso creado exitosamente!')
+      router.push('/administrator')
+      
+    } catch (error) {
+      console.error('Error al guardar curso:', error)
+      alert('❌ Error al guardar el curso. Verifica la consola para más detalles.')
+      setSaving(false)
+    }
   }
 
   const iconOptions = ['🎓', '🎯', '📢', '🚶', '🦷', '🦘', '🚽', '✋', '🔊', '🍽️', '🐕', '📚', '🏆', '💡']
