@@ -20,8 +20,10 @@ export default function AdministratorPage() {
   })
 
   useEffect(() => {
-    const session = getLocalSession()
-    if (session?.user?.role !== 'admin') {
+    const { data } = getLocalSession()
+    const session = data?.session
+    
+    if (!session || session.user?.user_metadata?.role !== 'admin') {
       router.push('/cursos/auth/login?redirect=/administrator')
     } else {
       setIsAdmin(true)
