@@ -1,0 +1,48 @@
+'use client'
+
+import { useRef } from 'react'
+import { Editor } from '@tinymce/tinymce-react'
+
+interface TinyMCEEditorProps {
+  value: string
+  onChange: (content: string) => void
+  height?: number
+}
+
+export default function TinyMCEEditor({ value, onChange, height = 500 }: TinyMCEEditorProps) {
+  const editorRef = useRef<any>(null)
+
+  return (
+    <Editor
+      apiKey="your-api-key-here" // Aquí irá tu API key de TinyMCE
+      onInit={(evt, editor) => editorRef.current = editor}
+      value={value}
+      onEditorChange={onChange}
+      init={{
+        height: height,
+        menubar: true,
+        language: 'es',
+        plugins: [
+          'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+          'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+          'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+        ],
+        toolbar: 'undo redo | blocks | ' +
+          'bold italic forecolor | alignleft aligncenter ' +
+          'alignright alignjustify | bullist numlist outdent indent | ' +
+          'removeformat | image media link | code | help',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+        image_title: true,
+        automatic_uploads: true,
+        file_picker_types: 'image',
+        images_upload_handler: async (blobInfo) => {
+          // Aquí iría la lógica para subir imágenes a tu servidor
+          // Por ahora retornamos un placeholder
+          return new Promise((resolve) => {
+            resolve('https://via.placeholder.com/800x400')
+          })
+        }
+      }}
+    />
+  )
+}
