@@ -1,12 +1,31 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, User, LogOut } from 'lucide-react'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [userName, setUserName] = useState('')
+
+  useEffect(() => {
+    // Verificar si hay sesión
+    const session = localStorage.getItem('hakadogs_cursos_session')
+    if (session) {
+      const data = JSON.parse(session)
+      setIsLoggedIn(data.loggedIn)
+      setUserName(data.name)
+    }
+  }, [])
+
+  const handleLogout = () => {
+    localStorage.removeItem('hakadogs_cursos_session')
+    setIsLoggedIn(false)
+    setUserName('')
+    window.location.href = '/cursos'
+  }
 
   const navLinks = [
     { href: '/servicios', label: 'Servicios' },
@@ -59,6 +78,43 @@ export default function Navigation() {
             ))}
           </div>
 
+          {/* Auth Buttons Desktop */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {isLoggedIn ? (
+              <>
+                <Link
+                  href="/cursos/mi-escuela"
+                  className="flex items-center space-x-2 text-gray-700 hover:text-forest font-medium transition-colors"
+                >
+                  <User size={20} />
+                  <span>{userName}</span>
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center space-x-2 text-gray-700 hover:text-red-600 font-medium transition-colors"
+                >
+                  <LogOut size={20} />
+                  <span>Salir</span>
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/cursos/auth/login"
+                  className="text-gray-700 hover:text-forest font-medium transition-colors"
+                >
+                  Iniciar Sesión
+                </Link>
+                <Link
+                  href="/cursos/auth/registro"
+                  className="bg-gradient-to-r from-forest to-sage text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90 transition-all"
+                >
+                  Registrarse
+                </Link>
+              </>
+            )}
+          </div>
+
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -83,6 +139,49 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Auth Buttons Mobile */}
+            <div className="pt-4 border-t border-gray-200 space-y-2">
+              {isLoggedIn ? (
+                <>
+                  <Link
+                    href="/cursos/mi-escuela"
+                    className="flex items-center space-x-2 py-2 text-gray-700 hover:text-forest font-medium transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <User size={20} />
+                    <span>{userName}</span>
+                  </Link>
+                  <button
+                    onClick={() => {
+                      handleLogout()
+                      setIsOpen(false)
+                    }}
+                    className="flex items-center space-x-2 w-full py-2 text-gray-700 hover:text-red-600 font-medium transition-colors"
+                  >
+                    <LogOut size={20} />
+                    <span>Salir</span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/cursos/auth/login"
+                    className="block py-2 text-gray-700 hover:text-forest font-medium transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Iniciar Sesión
+                  </Link>
+                  <Link
+                    href="/cursos/auth/registro"
+                    className="block w-full bg-gradient-to-r from-forest to-sage text-white font-semibold px-6 py-2 rounded-lg hover:opacity-90 transition-all text-center"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Registrarse
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
         </div>
       )}

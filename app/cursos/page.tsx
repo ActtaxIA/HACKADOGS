@@ -189,20 +189,40 @@ export default function CursosPage() {
     e.preventDefault()
     setLoading(true)
     
-    // Simular envío (aquí iría la integración real con tu servicio de newsletter)
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    // Verificar si hay sesión
+    const session = localStorage.getItem('hakadogs_cursos_session')
+    if (session) {
+      const data = JSON.parse(session)
+      if (data.loggedIn) {
+        // Si está logueado, dar acceso directo
+        setSubmitted(true)
+        setLoading(false)
+        setEmail('')
+        setTimeout(() => {
+          window.location.href = '/cursos/mi-escuela/curso-gratuito'
+        }, 2000)
+        return
+      }
+    }
     
-    setSubmitted(true)
+    // Si no está logueado, redirigir a registro
     setLoading(false)
-    setEmail('')
-    
-    // Reset después de 5 segundos
-    setTimeout(() => setSubmitted(false), 5000)
+    window.location.href = '/cursos/auth/registro'
   }
 
   const handleBuyCourse = (cursoId: string) => {
-    // Aquí iría la integración con el sistema de pago
-    alert(`Redirigiendo a compra del curso: ${cursoId}`)
+    // Verificar si hay sesión
+    const session = localStorage.getItem('hakadogs_cursos_session')
+    if (session) {
+      const data = JSON.parse(session)
+      if (data.loggedIn) {
+        // Si está logueado, ir a comprar
+        window.location.href = `/cursos/comprar/${cursoId}`
+        return
+      }
+    }
+    // Si no está logueado, ir a registro
+    window.location.href = '/cursos/auth/registro'
   }
 
   return (
