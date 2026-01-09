@@ -101,7 +101,7 @@ export default function Navigation() {
               <>
                 <Link
                   href="/cursos/auth/login"
-                  className="text-gray-700 hover:text-forest font-medium transition-colors"
+                  className="bg-gray-100 text-gray-700 hover:bg-gray-200 font-semibold px-6 py-2 rounded-lg transition-all"
                 >
                   Iniciar Sesión
                 </Link>
@@ -167,7 +167,7 @@ export default function Navigation() {
                 <>
                   <Link
                     href="/cursos/auth/login"
-                    className="block py-2 text-gray-700 hover:text-forest font-medium transition-colors"
+                    className="block w-full bg-gray-100 text-gray-700 hover:bg-gray-200 font-semibold px-6 py-2 rounded-lg transition-all text-center"
                     onClick={() => setIsOpen(false)}
                   >
                     Iniciar Sesión
